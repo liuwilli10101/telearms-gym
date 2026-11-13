@@ -177,6 +177,9 @@ YAM_GRIPPER = GripperConfig(
     actuators=["left_gripper_left_tip", "left_gripper_right_tip"],
     range=np.array([0.0, 1.0]),
     pad_bodies=["left_link_left_finger", "left_link_right_finger"],
+    # The armor box encloses the whole finger link, so it overlaps objects the
+    # open hand is merely hovering over — only the tip colliders grip.
+    pad_geom_exclude=["_finger_armor"],
     reverse_control=False,                    # RoboEval convention: 0=open, 1=closed
     discrete=False,                           # molmoact2 emits continuous [0,1]
 )
@@ -186,6 +189,7 @@ YAM_RIGHT_GRIPPER = GripperConfig(
     actuators=["right_gripper_left_tip", "right_gripper_right_tip"],
     range=np.array([0.0, 1.0]),               # see YAM_GRIPPER
     pad_bodies=["right_link_left_finger", "right_link_right_finger"],
+    pad_geom_exclude=["_finger_armor"],       # see YAM_GRIPPER
     reverse_control=False,
     discrete=False,
 )

@@ -20,6 +20,11 @@ class GripperConfig:
         body: Name of the gripper body for embedded grippers
         model: Path to the gripper XML model for standalone grippers
         pad_bodies: List of root pad bodies for contact detection
+        pad_geom_exclude: Geom name suffixes under `pad_bodies` that are not
+            contact pads — structural shells that share the finger link but
+            never grip (e.g. YAM's finger armor). Without this they count as
+            pads and an open hand hovering over an object still reads as
+            holding it.
         pinch_site: Site name for pinch grasping, if applicable
         discrete: Whether to round control signal to min or max range value
         reverse_control: Whether to reverse the control signal direction
@@ -29,6 +34,7 @@ class GripperConfig:
     body: Optional[str] = None
     model: Optional[Path] = None
     pad_bodies: List[str] = field(default_factory=list)
+    pad_geom_exclude: List[str] = field(default_factory=list)
     pinch_site: Optional[str] = None
     discrete: bool = True
     reverse_control: bool = False

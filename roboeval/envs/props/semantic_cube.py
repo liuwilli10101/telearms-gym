@@ -6,6 +6,7 @@ from typing import Dict, Any, Tuple, List, Optional
 import warnings
 
 import numpy as np
+import mujoco
 from dm_control import mjcf                         # <- for type hint only
 from pyquaternion import Quaternion                # <- for quaternion math
 
@@ -17,9 +18,19 @@ def quat_apply(quat_wxyz: np.ndarray | List[float],
     """
     Rotate `vec_xyz` by quaternion `quat_wxyz` (w, x, y, z) ➜ new 3-vector.
     """
-    q = Quaternion(w=quat_wxyz[0], x=quat_wxyz[1],
-                   y=quat_wxyz[2], z=quat_wxyz[3])
-    return q.rotate(vec_xyz)
+    q = np.asarray(quat_wxyz, dtype=np.float64)
+    norm_squared = float(np.dot(q, q))
+    if norm_squared == 0:
+        return np.zeros(3, dtype=np.float64)
+    if not np.isfinite(norm_squared):
+        return Quaternion(q).rotate(vec_xyz)
+    # Match Quaternion.rotate's normalization, without constructing three
+    # Quaternion objects and multiplication matrices for every face query.
+    if abs(1.0 - norm_squared) >= 1e-14:
+        q = q / np.sqrt(norm_squared)
+    result = np.empty(3, dtype=np.float64)
+    mujoco.mju_rotVecQuat(result, np.asarray(vec_xyz, dtype=np.float64), q)
+    return result
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -297,6 +308,7 @@ class SemanticCube(KinematicProp):
     # readability check treats either orientation as valid for these.
     # Asymmetric labels (F, G, R, A, B, C, ...) MUST be in the correct
     # orientation — flipped glyphs are rejected.
+    _ROTATIONAL_90_SYMMETRIC = frozenset({"+"})
     _ROTATIONAL_180_SYMMETRIC = frozenset({"H", "I", "N", "O", "S", "X", "Z", "0", "1", "8"})
 
     def is_face_readable(
@@ -339,17 +351,15 @@ class SemanticCube(KinematicProp):
         glyph_dir = get_standard_glyph_dir(face_dir)
         
         # ---------- find outward normal & glyph-top dir in WORLD -----------
-        n_world = t_world = None
-        for n_w, lbl in self.face_normals_world():
-            if lbl == target_label:
-                n_world = n_w / np.linalg.norm(n_w)
-                break
-        for t_w, lbl in self.face_dirs_world():
-            if lbl == target_label:
-                t_world = t_w / np.linalg.norm(t_w)
-                break
-        if n_world is None or t_world is None:
+        face = self._faces.get(target_label)
+        if face is None:
             return False   # label not found
+        _, normal_local, glyph_local = face
+        quaternion = self.body.get_quaternion()
+        n_world = quat_apply(quaternion, normal_local)
+        t_world = quat_apply(quaternion, glyph_local)
+        n_world /= np.linalg.norm(n_world)
+        t_world /= np.linalg.norm(t_world)
 
         # ---------- 1) face must point in expected direction ----------------
         if float(np.dot(n_world, face_dir)) < up_tol:
@@ -377,7 +387,11 @@ class SemanticCube(KinematicProp):
             flip_ok = str(target_label).upper() in self._ROTATIONAL_180_SYMMETRIC
         else:
             flip_ok = bool(allow_flip)
-        if flip_ok:
+        if allow_flip is None and str(target_label) in self._ROTATIONAL_90_SYMMETRIC:
+            # A plus is readable at each quarter-turn, but not at a diagonal.
+            sine = float(np.dot(np.cross(t_proj, g_proj), face_dir))
+            cos_glyph = max(abs(cos_glyph), abs(sine))
+        elif flip_ok:
             cos_glyph = abs(cos_glyph)
         return cos_glyph >= rot_tol
 

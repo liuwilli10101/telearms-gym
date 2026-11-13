@@ -257,12 +257,23 @@ class Gripper:
                 self._actuated_joints.append(actuator.joint)
 
     def _get_pad_geoms(self) -> list[Geom]:
-        """Get all collidable geometries in the gripper pads.
-        
+        """Get the collidable geometries that actually grip.
+
+        A pad body can also carry structural geometry that never grips — YAM's
+        finger armor is a box enclosing the whole finger link. Counting those
+        as pads makes an open hand hovering over an object read as holding it,
+        so ``pad_geom_exclude`` drops them by name suffix.
+
         Returns:
             List of collidable geometry objects that make up the gripper pads
         """
+        excluded = tuple(self._config.pad_geom_exclude)
         geoms = []
         for body in self._pad_bodies:
-            geoms.extend([g for g in body.geoms if g.is_collidable()])
+            for geom in body.geoms:
+                if not geom.is_collidable():
+                    continue
+                if excluded and geom.mjcf.full_identifier.endswith(excluded):
+                    continue
+                geoms.append(geom)
         return geoms

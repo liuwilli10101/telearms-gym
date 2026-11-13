@@ -66,5 +66,8 @@ mujoco, runs the simulator in a subprocess of it with the same API.
 ## Source
 
 `roboeval/` is `roboeval/` of frodobots-org/telearms-roboplayground at commit 594af61 (branch
-`telearms-main`), unchanged, under the Apache-2.0 license in `LICENSE`. `gymnasium_env/` is the
+`telearms-main`), under the Apache-2.0 license in `LICENSE`, with two fixes from the TeleArms
+training code that the success checks depend on: only the YAM finger tips count as gripper pads
+(the armor around each finger used to make an open hand hovering over a cube read as holding it),
+and a letter cube's "+" face reads as upright at every quarter turn. `gymnasium_env/` is the
 environment from the TeleArms training code.
