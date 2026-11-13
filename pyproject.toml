@@ -30,11 +30,9 @@ dependencies = [
   "pynput==1.7.7",
   # imported by roboeval/envs/props/items.py, missing from roboeval's own list
   "matplotlib",
+  # camera_resolution and augmentation letterbox each frame (and augment it) in torch
+  "torch",
 ]
-
-[project.optional-dependencies]
-# camera_resolution and augmentation letterbox each frame (and augment it) in torch.
-augment = ["torch"]
 
 [tool.setuptools.packages.find]
 where = ["."]

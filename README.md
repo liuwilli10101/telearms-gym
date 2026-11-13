@@ -15,13 +15,6 @@ conda activate telearms
 pip install "git+https://github.com/liuwilli10101/telearms-gym.git"
 ```
 
-`camera_resolution` and `augmentation` also need torch. To use them, run this instead of the last
-line above:
-
-```bash
-pip install "telearms-gym[augment] @ git+https://github.com/liuwilli10101/telearms-gym.git"
-```
-
 ## Use
 
 ```python
