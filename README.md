@@ -6,17 +6,16 @@ scene and success check in other colours or letters).
 
 ## Install
 
-Python 3.10 or newer. The repository is private, so install it with a GitHub account that can
-read it:
+Python 3.10 or newer:
 
 ```bash
-pip install "git+ssh://git@github.com/liuwilli10101/telearms-gym.git"
+pip install "git+https://github.com/liuwilli10101/telearms-gym.git"
 # or, from a checkout:  pip install -e .
 ```
 
 The simulator pins numpy 1.26 and gymnasium 0.29 (the stepjam/Gymnasium fork), so give it its own
 environment. `camera_resolution` and `augmentation` also need torch
-(`pip install "telearms-gym[augment] @ git+ssh://git@github.com/liuwilli10101/telearms-gym.git"`).
+(`pip install "telearms-gym[augment] @ git+https://github.com/liuwilli10101/telearms-gym.git"`).
 
 ## Use
 
