@@ -6,16 +6,21 @@ scene and success check in other colours or letters).
 
 ## Install
 
-Python 3.10 or newer:
+Use Python 3.10, 3.11 or 3.12 (two dependencies, safetensors 0.4.3 and labmaze, do not install on
+3.13) in a new environment, since the simulator pins numpy 1.26 and gymnasium 0.29:
 
 ```bash
+conda create -n telearms python=3.11 -y
+conda activate telearms
 pip install "git+https://github.com/liuwilli10101/telearms-gym.git"
-# or, from a checkout:  pip install -e .
 ```
 
-The simulator pins numpy 1.26 and gymnasium 0.29 (the stepjam/Gymnasium fork), so give it its own
-environment. `camera_resolution` and `augmentation` also need torch
-(`pip install "telearms-gym[augment] @ git+https://github.com/liuwilli10101/telearms-gym.git"`).
+`camera_resolution` and `augmentation` also need torch. To use them, run this instead of the last
+line above:
+
+```bash
+pip install "telearms-gym[augment] @ git+https://github.com/liuwilli10101/telearms-gym.git"
+```
 
 ## Use
 
