@@ -29,6 +29,10 @@ obs, reward, terminated, truncated, info = env.step(env.action_space.sample())
 print(info["instruction"])
 ```
 
+`info["instruction"]` is the task's language instruction, one short LIBERO-style sentence such as
+"Put red on the green patch and blue on the yellow patch."; the datasets below are labelled with
+the same sentences.
+
 `gym.make("gymnasium_env.telearms_env:telearms/CubePatchPlacement")` imports the module itself.
 An id is `telearms/` plus the task name without spaces; `TeleArmsEnv.tasks()` lists the names.
 

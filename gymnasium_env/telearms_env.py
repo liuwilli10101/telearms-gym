@@ -13,7 +13,7 @@ are registered with gymnasium, 100 in all, by name without spaces:
 
 A variant is its base task shown in other colours or letters (variants.py): the same scene and
 success check, with the instruction rewritten to match; info["instruction"] gives each task's
-instruction.
+instruction, one short LIBERO-style sentence ("Put the red cube behind the blue cube.").
 
 initial_pos_range=(min_x, max_x, min_y, max_y) places every free object (the cubes) uniformly
 in that table area at reset, instead of where the task puts them. augmentation renders like
