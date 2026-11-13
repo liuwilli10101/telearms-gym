@@ -10,8 +10,8 @@ Use Python 3.10, 3.11 or 3.12 (two dependencies, safetensors 0.4.3 and labmaze, 
 3.13) in a new environment, since the simulator pins numpy 1.26 and gymnasium 0.29:
 
 ```bash
-conda create -n telearms python=3.11 -y
-conda activate telearms
+conda create -n telearms-gym python=3.11 -y
+conda activate telearms-gym
 pip install "git+https://github.com/liuwilli10101/telearms-gym.git"
 ```
 
