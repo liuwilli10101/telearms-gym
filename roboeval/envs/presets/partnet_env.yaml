@@ -1,0 +1,19 @@
+props:
+  - type: BaseCabinet
+    position: [1.1, 0.3, 0]
+    euler: [0, 0, -90]
+  - type: BaseCabinet
+    position: [1.1, -0.3, 0]
+    euler: [0, 0, -90]
+  - type: BaseCabinet
+    position: [0.2, 1.5, 0]
+    euler: [0, 0, 0]
+  - type: BaseCabinet
+    position: [-0.4, 1.5, 0]
+    euler: [0, 0, 0]
+  - type: BaseCabinet
+    position: [0.2, -0.8, 0]
+    euler: [0, 0, 0]
+  - type: BaseCabinet
+    position: [-0.4, -0.8, 0]
+    euler: [0, 0, 0]

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<mujoco model="cube">
+  <compiler angle="radian"
+            texturedir="../../../../assets/textures"
+            meshdir=""/>
+  <!-- Visual-only face geoms (no collision) -->
+  <default>
+    <default class="side">
+      <geom type="box"
+            size="0.02 0.02 0.001"
+            contype="0"
+            conaffinity="0"
+            density="0"
+            mass="0"/>
+    </default>
+  </default>
+
+  <!-- six textures + six materials -->
+  <asset>
+            <texture name="T0" file="O.png"/>
+    <texture name="T1" file="T.png"/>
+    <texture name="T2" file="H.png"/>
+    <texture name="T3" file="V.png"/>
+    <texture name="T4" file="X.png"/>
+    <texture name="T5" file="N.png"/>
+            <material name="M0" reflectance="0.3" shininess="0.6" texture="T0"/>
+    <material name="M1" reflectance="0.3" shininess="0.6" texture="T1"/>
+    <material name="M2" reflectance="0.3" shininess="0.6" texture="T2"/>
+    <material name="M3" reflectance="0.3" shininess="0.6" texture="T3"/>
+    <material name="M4" reflectance="0.3" shininess="0.6" texture="T4"/>
+    <material name="M5" reflectance="0.3" shininess="0.6" texture="T5"/>
+  </asset>
+
+  <!-- six independent geoms, one per face -->
+  <worldbody>
+    <body name="cube_root">
+      <geom name="collision" group="3" type="box" size="0.0200 0.0200 0.0200" density="1500" friction="1.5 0.1 0.01" solimp="0.95 0.99 0.001" solref="0.005 1" condim="3" rgba="0 0 0 0" contype="1" conaffinity="1"/>
+      <geom name="+x_face" class="side" group="2" material="M0" pos="0.0200 0.0000 0.0000" euler="1.5708 1.5708 0.0000"/>
+      <geom name="-x_face" class="side" group="2" material="M1" pos="-0.0200 0.0000 0.0000" euler="1.5708 -1.5708 0.0000"/>
+      <geom name="+y_face" class="side" group="2" material="M2" pos="0.0000 0.0200 0.0000" euler="1.5708 0.0000 0.0000"/>
+      <geom name="-y_face" class="side" group="2" material="M3" pos="0.0000 -0.0200 0.0000" euler="1.5708 0.0000 0.0000"/>
+      <geom name="+z_face" class="side" group="2" material="M4" pos="0.0000 0.0000 0.0200" euler="0.0000 0.0000 0.0000"/>
+      <geom name="-z_face" class="side" group="2" material="M5" pos="0.0000 0.0000 -0.0200" euler="3.1416 0.0000 0.0000"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,31 @@
+<mujoco model="original-5">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0_0" specular="0.06666666666666667" shininess="0.03" rgba="0.8862745098039215 0.8862745098039215 0.8862745098039215 1"/>
+    <mesh file="original-5.obj"/>
+    <mesh file="original-5_collision_0.obj"/>
+    <mesh file="original-5_collision_1.obj"/>
+    <mesh file="original-5_collision_2.obj"/>
+    <mesh file="original-5_collision_3.obj"/>
+    <mesh file="original-5_collision_4.obj"/>
+    <mesh file="original-5_collision_5.obj"/>
+  </asset>
+  <worldbody>
+    <body name="original-5">
+      <geom material="material_0_0" mesh="original-5" class="visual"/>
+      <geom mesh="original-5_collision_0" rgba="0.9322963242571708 0.38567805201913674 0.9516401680213834 1" class="collision"/>
+      <geom mesh="original-5_collision_1" rgba="0.7932413430609873 0.515382900011749 0.1686838054596157 1" class="collision"/>
+      <geom mesh="original-5_collision_2" rgba="0.6219019207509594 0.792977316681187 0.23711813185506814 1" class="collision"/>
+      <geom mesh="original-5_collision_3" rgba="0.4410519791991171 0.9630441071720909 0.5689281440626511 1" class="collision"/>
+      <geom mesh="original-5_collision_4" rgba="0.763628079363291 0.7620582575322363 0.36283300998949053 1" class="collision"/>
+      <geom mesh="original-5_collision_5" rgba="0.7851089507097389 0.7711297464637629 0.8684634767789836 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

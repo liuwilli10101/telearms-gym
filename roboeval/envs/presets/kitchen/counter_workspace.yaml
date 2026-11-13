@@ -1,0 +1,14 @@
+# Kitchen counter workspace — uses the same Table as blocks domain
+# so camera view and workspace are consistent across domains.
+props:
+  - type: Table
+    position: [0.6, 0, 0]
+    euler: [0, 0, -90]
+spawns:
+  - name: workspace
+    size: [0.55, 0.70, 0.01]
+    position: [0.55, 0, 0.95]
+    euler: [0, 0, -90]
+robot:
+  - name: Bimanual Panda
+    position: [0.1, 0, 0]

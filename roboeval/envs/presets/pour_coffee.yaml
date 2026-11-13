@@ -1,0 +1,14 @@
+# Pour Coffee in table 
+props:
+  - type: Table
+    position: [0.7, 0, 0]
+    euler: [0, 0, -90]
+  - type: BreakfastTray
+    position: [0.6, 0, 0.95]
+    euler: [0, 90, 90]
+robot:
+  - name: Bimanual Panda
+    position: [0.1, 0, 0.2]
+  - name: h1
+    position: [0, 0, 0]
+  

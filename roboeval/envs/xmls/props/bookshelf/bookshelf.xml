@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="bookshelf">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true" /><asset>
+    <mesh name="link_0_combined_mesh" file="link_0_combined_mesh.obj"  />
+    <mesh name="link_1_combined_mesh" file="link_1_combined_mesh.obj"  />
+    <mesh name="link_2_combined_mesh" file="link_2_combined_mesh.obj"  />
+    <mesh name="link_3_combined_mesh" file="link_3_combined_mesh.obj"  />
+  </asset>
+  <worldbody>
+    <geom quat="0.5 0.5 0.5 0.5" type="mesh" mesh="link_3_combined_mesh" density="1000" contype="1" conaffinity="1" friction="1.0 0.005" />
+    <site name="low_shelf" type="box" size=".1 .4 .1" pos="0 0 0.35"  />
+    <site name="high_shelf" pos="0 0 0.51" />
+    <body name="high_shelf" pos="0 0 0.51">
+          <geom name="high_box_mesh" type="box" size=".1 .4 .1" solimp="0.95 0.98 0.001" solref="0.004 1" rgba="1 0 0 1"/>
+    </body>
+     <body name="lower_shelf" pos="0 0 0.35">
+          <geom name="lower_box_mesh" type="box" size=".1 .4 .1" solimp="0.95 0.98 0.001" solref="0.004 1" rgba="1 0 0 1"/>
+    </body>
+    <body name="link_0" quat="0.5 0.5 0.5 0.5">
+      <joint name="joint_0" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.296" />
+      <geom type="mesh" mesh="link_0_combined_mesh"  density="1000" contype="0" conaffinity="0" friction="0 0 0" />
+    </body>
+    <body name="link_1" quat="0.5 0.5 0.5 0.5">
+      <joint name="joint_1" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.299" />
+      <geom type="mesh" mesh="link_1_combined_mesh" density="1000" contype="0" conaffinity="0" friction="0 0 0" />
+    </body>
+    <body name="link_2" quat="0.5 0.5 0.5 0.5">
+      <joint name="joint_2" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.299" />
+      <geom type="mesh" mesh="link_2_combined_mesh" density="1000" contype="0" conaffinity="0" friction="0 0 0" />
+    </body>
+
+
+  </worldbody>
+</mujoco>

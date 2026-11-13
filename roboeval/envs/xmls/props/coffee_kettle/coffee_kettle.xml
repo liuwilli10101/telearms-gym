@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="coffee_kettle">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true" /><asset>
+    <mesh name="original-3" file="original-3.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-2" file="original-2.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-4" file="original-4.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-10" file="original-10.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-14" file="original-14.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-9" file="original-9.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-5" file="original-5.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-13" file="original-13.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-8" file="original-8.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-6" file="original-6.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-11" file="original-11.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-12" file="original-12.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-7" file="original-7.obj" scale="0.2 0.2 0.2" />
+    <mesh name="original-1" file="original-1.obj" scale="0.2 0.2 0.2" />
+  </asset>
+  <worldbody>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-6" />
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-11" friction="1.0 0.005 0.0001" density="500" mass="0.4" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-12" friction="1.0 0.005 0.0001" density="500" mass="0.4" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-7" friction="1.0 0.005 0.0001" density="500" mass="0.4" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+    <body name="base">
+      <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-1" friction="1.0 0.005 0.0001" density="500" mass="0.4" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+      <site name="spout" type="box" size=".01 .01 .01" pos="-0.15 0 0.05" rgba="1 1 0 0"/>
+    </body>
+    <body name="link_0" quat="0.5 0.5 -0.5 -0.5">
+      <!-- <joint name="joint_0" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.002" /> -->
+      <geom type="mesh" mesh="original-3" friction="1.0 0.005 0.0001" density="500" mass="0.4" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+      <geom type="mesh" mesh="original-2" friction="1.0 0.005 0.0001" density="500" mass="0.4" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+    </body>
+    <body name="link_1" pos="5.00048e-06 -0.000166347 0.06732" quat="0.5 0.5 -0.5 -0.5">
+      <!-- <joint name="joint_1" pos="0 0 0" axis="-0.0191883 -2.68514e-05 -0.999816" range="-0.41888 0.41888" /> -->
+      <geom pos="-0.000166347 -0.06732 5.00048e-06" type="mesh" mesh="original-4" friction="1.0 0.005 0.0001" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="0.4"/>
+      <geom pos="-0.000166347 -0.06732 5.00048e-06" type="mesh" mesh="original-10" friction="1.0 0.005 0.0001" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="0.4"/>
+      <geom pos="-0.000166347 -0.06732 5.00048e-06" type="mesh" mesh="original-14" friction="1.0 0.005 0.0001" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="0.4"/>
+      <geom pos="-0.000166347 -0.06732 5.00048e-06" type="mesh" mesh="original-9" friction="1.0 0.005 0.0001" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="0.4"/>
+      <geom pos="-0.000166347 -0.06732 5.00048e-06" type="mesh" mesh="original-5" friction="1.0 0.005 0.0001" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="0.4"/>
+      <geom pos="-0.000166347 -0.06732 5.00048e-06" type="mesh" mesh="original-13" friction="1.0 0.005 0.0001" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="0.4"/>
+      <geom pos="-0.000166347 -0.06732 5.00048e-06" type="mesh" mesh="original-8" friction="1.0 0.005 0.0001" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="0.4"/>
+    </body>
+  </worldbody>
+</mujoco>

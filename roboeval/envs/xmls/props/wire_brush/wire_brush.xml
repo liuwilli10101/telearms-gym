@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="17410_Wire_brush_with_scraper_v1">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <mesh file="17410_Wire_brush_with_scraper_v1.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_0.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_1.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_2.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_3.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_4.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_5.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_6.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_7.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_8.obj" scale="0.01 0.01 0.01"/>
+    <mesh file="17410_Wire_brush_with_scraper_v1_collision_9.obj" scale="0.01 0.01 0.01"/>
+  </asset>
+  <worldbody>
+    <body name="17410_Wire_brush_with_scraper_v1">
+      <geom mesh="17410_Wire_brush_with_scraper_v1" class="visual" solimp="0.98 0.0099 0.001" solref="0.004 1" mass="1"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_0" rgba="0.5800762046249925 0.5736568680271353 0.6947203984797569 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_1" rgba="0.16094125508033352 0.6817912685491141 0.08717844286929388 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_2" rgba="0.021953765103420286 0.9484485284273639 0.6737496318906554 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_3" rgba="0.2501937453523888 0.7447858090219236 0.3422346625699144 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_4" rgba="0.25880664460993197 0.1102957608313 0.694872576759373 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_5" rgba="0.8053438202931184 0.6798704857787135 0.3614364178372147 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_6" rgba="0.15417391172315908 0.444657829859216 0.028333318320314826 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_7" rgba="0.4745314966026972 0.2842743789295462 0.05124755784923918 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_8" rgba="0.30888348819162303 0.7734788482908791 0.6850621052255198 1" class="collision"/>
+      <geom mesh="17410_Wire_brush_with_scraper_v1_collision_9" rgba="0.7252887507460948 0.4047510310538809 0.040804380699341336 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

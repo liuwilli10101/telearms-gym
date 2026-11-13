@@ -1,0 +1,55 @@
+<mujoco model="partnet_f636f0aa2025ba3923c841f9d5051936">
+  <compiler angle="radian" meshdir="textured_objs/"/>
+
+  <default>
+    <default class="visual">
+      <geom contype="0" conaffinity="0" group="2" type="mesh" density="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+
+  <asset>
+    <mesh name="original-8" file="original-8.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="original-5" file="original-5.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="original-4" file="original-4.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="original-3" file="original-3.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="original-2" file="original-2.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="original-6" file="original-6.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="original-7" file="original-7.obj" scale="0.15 0.15 0.15"/>
+    <mesh name="original-1" file="original-1.obj" scale="0.15 0.15 0.15"/>
+  </asset>
+
+  <worldbody>
+    <body name="base">
+      <geom quat="0.5 0.5 -0.5 -0.5" class="visual" mesh="original-3"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="visual" mesh="original-2"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="visual" mesh="original-6"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="visual" mesh="original-7"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="visual" mesh="original-1"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="collision" type="mesh" mesh="original-3"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="collision" type="mesh" mesh="original-2"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="collision" type="mesh" mesh="original-6"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="collision" type="mesh" mesh="original-7"/>
+      <geom quat="0.5 0.5 -0.5 -0.5" class="collision" type="mesh" mesh="original-1"/>
+      <body name="link_1" pos="0.10607715 0 0.00475647" quat="0.5 0.5 -0.5 -0.5">
+        <joint name="joint_1" pos="0 0 0" axis="-1 0 0" range="-0.175929 1.80327"/>
+        <geom name="lid-2" pos="0 -0.00475647 0.10607715" quat="1 0 0 0" class="visual" mesh="original-4"/>
+        <geom pos="0 -0.00475647 0.10607715" quat="1 0 0 0" type="mesh" mesh="original-4"/>
+        <body name="link_0">
+          <joint name="joint_0" pos="0 0 0" axis="1 0 0" range="-0.119381 2.58867"/>
+          <geom name="body-1" pos="0 -0.00475647 0.10607715" quat="1 0 0 0" class="visual" mesh="original-8"/>
+          <geom pos="0 -0.00475647 0.10607715" quat="1 0 0 0" class="visual" mesh="original-5"/>
+          <geom pos="0 -0.00475647 0.10607715" quat="1 0 0 0" type="mesh" mesh="original-8"/>
+          <geom pos="0 -0.00475647 0.10607715" quat="1 0 0 0" type="mesh" mesh="original-5"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base" body2="link_1"/>
+    <exclude body1="link_0" body2="link_1"/>
+  </contact>
+</mujoco>

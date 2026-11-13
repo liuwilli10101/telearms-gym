@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telearms-gym"
+version = "0.1.0"
+description = "Gymnasium envs for the 100 TeleArms bimanual YAM tasks, on the RoboEval simulator"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+# roboeval's own requirements, as in frodobots-org/telearms-roboplayground's pyproject.toml.
+dependencies = [
+  "gymnasium @ git+https://git@github.com/stepjam/Gymnasium.git@0.29.2",
+  "numpy==1.26.*",
+  "safetensors==0.4.3",
+  "mujoco==3.3.3",
+  "dm_control==1.0.31",
+  "imageio",
+  "pyquaternion",
+  "mujoco_utils",
+  "wget",
+  "mojo @ git+https://github.com/helen9975/mojo.git",
+  "pyyaml",
+  "dearpygui",
+  "pyopenxr",
+  "click-prompt",
+  "rich-click",
+  "hydra-core==1.3.*",
+  "pynput==1.7.7",
+  # imported by roboeval/envs/props/items.py, missing from roboeval's own list
+  "matplotlib",
+]
+
+[project.optional-dependencies]
+# camera_resolution and augmentation letterbox each frame (and augment it) in torch.
+augment = ["torch"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["roboeval*", "gymnasium_env"]
+
+[tool.setuptools.package-data]
+roboeval = [
+  "envs/xmls/**/*",
+  "envs/presets/**/*.yaml"
+]
+gymnasium_env = ["telearms_tasks.json"]

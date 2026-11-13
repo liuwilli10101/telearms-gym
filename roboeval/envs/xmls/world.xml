@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<mujoco model="world">
+  <option integrator="implicitfast">
+    <flag multiccd="enable"/>
+  </option>
+  <statistic center="0 0 1" extent="1.8"/>
+  <visual>
+    <headlight diffuse="0.3 0.3 0.3" ambient="0.2 0.2 0.2" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="160" elevation="-20"/>
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+  </asset>
+  <worldbody>
+    <light name="table_spot" pos="0.5 0 2.0" dir="0 0 -1" cutoff="45" exponent="20"
+           diffuse="0.8 0.8 0.8" specular="0.2 0.2 0.2" castshadow="true"/>
+    <body name="floor">
+      <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    </body>
+    <!-- Close top-down-ish pose tuned via tools/cam_cli.py:
+         cam at (0.37, 0, 1.62) aimed at target (0.50, 0, 1.35),
+         which is distance 0.30 m, azimuth 180°, elevation 64°, fovy 90°.
+         xyaxes: cam-right = world -Y ; cam-up = (cos, 0, sin) of elevation. -->
+    <camera name="external" mode="fixed" pos="0.370 0.000 1.620" xyaxes="0.000 -1.000 0.000 0.901 0.000 0.434" fovy="90"/>
+  </worldbody>
+</mujoco>

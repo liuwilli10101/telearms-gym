@@ -1,0 +1,38 @@
+props:
+  - type: Table
+    position: [2.7, 2.0, 0]
+    euler: [0, 0, -90]
+arena:
+  name: kitchen
+  items:
+    - name: kitchen_floor
+      xml: floor
+    - name: kitchen_wall_1
+      xml: wall_1
+    - name: kitchen_wall_2
+      xml: wall_2
+    - name: kitchen_wall_3
+      xml: wall_3
+    - name: kitchen_wall_4
+      xml: wall_4
+    - name: fridge_1
+      xml: fridge
+      position: [1.0, 1.0, 0.75]
+      euler: [0.0, 0.0, -1.570796]
+      kinematic: True
+    - name: fridge_2
+      xml: fridge
+      position: [1.0, 4.0, 0.75]
+      euler: [0.0, 0.0, 1.570796]
+      kinematic: True
+    - name: microwave
+      xml: microwave
+      position: [1.0, 2.0, 0.25]
+      euler: [0.0, 0.0, 0.0]
+      kinematic: True
+
+robot:
+  - name: Bimanual Panda
+    position: [2.1, 2.0, 0.0]
+  - name: h1
+    position: [2.0, 2.0, 0.0]

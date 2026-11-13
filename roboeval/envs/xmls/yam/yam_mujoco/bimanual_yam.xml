@@ -1,0 +1,40 @@
+<mujoco model="bimanual_yam">
+  <compiler angle="radian" meshdir="assets"/>
+
+  <option integrator="implicitfast"/>
+
+  <!-- Include the single-arm YAM model as an asset to be attached twice -->
+  <asset>
+    <model name="yam" file="yam.xml"/>
+  </asset>
+
+  <worldbody>
+    <!--
+    Bimanual YAM setup: Two arms side by side, 44cm apart, both facing forward (+X).
+    Left arm at y=+0.22m, right arm at y=-0.22m from center.
+
+    Using a parent body to contain both arms, which allows clean attachment
+    to scene via MjSpec.
+    -->
+    <body name="bimanual_base">
+      <!-- Left arm frame - positioned 22cm to the left (positive Y when facing +X) -->
+      <frame name="left_arm_frame" pos="0 0.22 0" quat="1 0 0 0">
+        <attach model="yam" body="arm" prefix="left_"/>
+      </frame>
+
+      <!-- Right arm frame - positioned 22cm to the right (negative Y when facing +X) -->
+      <frame name="right_arm_frame" pos="0 -0.22 0" quat="1 0 0 0">
+        <attach model="yam" body="arm" prefix="right_"/>
+      </frame>
+    </body>
+  </worldbody>
+
+  <keyframe>
+    <!-- Home positions for both arms - same as single arm but with prefixes -->
+    <!-- qpos order: left arm (6) + left gripper (2) + right arm (6) + right gripper (2) = 16 DOF -->
+    <key name="home"
+         qpos="0 1.047 1.047 0.1 -0.1 0 0 0 0 1.047 1.047 0.1 -0.1 0 0 0"
+         ctrl="0 1.047 1.047 0.1 -0.1 0 0 0 1.047 1.047 0.1 -0.1 0 0"/>
+  </keyframe>
+</mujoco>
+

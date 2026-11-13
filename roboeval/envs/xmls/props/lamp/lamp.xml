@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="lamp">
+  <!-- <option timestep="0.001" gravity="0 0 -9.81" solver="PGS" iterations="100"/> -->
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true" /><asset>
+    <mesh name="original-6" file="original-6.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-7" file="original-7.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-2" file="original-2.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-9" file="original-9.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-1" file="original-1.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-27" file="original-27.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-10" file="original-10.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-12" file="original-12.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-23" file="original-23.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-21" file="original-21.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-32" file="original-32.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-31" file="original-31.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-20" file="original-20.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-33" file="original-33.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-29" file="original-29.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-30" file="original-30.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-13" file="original-13.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-28" file="original-28.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-5" file="original-5.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-16" file="original-16.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-15" file="original-15.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-4" file="original-4.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-11" file="original-11.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-25" file="original-25.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-17" file="original-17.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-26" file="original-26.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-18" file="original-18.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-3" file="original-3.obj" scale="0.5 0.5 0.5" />
+    <mesh name="original-14" file="original-14.obj" scale="0.5 0.5 0.5" />
+  </asset>
+  <default>
+    <default class="balance">
+      <geom group="2" type="sphere" mass="2" size=".01" pos="-0.015 0 -0.025" contype="1" conaffinity="1" rgba= "1 0 1 0"/>
+    </default>
+  </default>
+  <worldbody>
+  <body name="base">
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-2" />
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-9" />
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-1" />
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-27" />
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-10" />
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-12" />
+  </body>
+    <body name="link_4" pos="0.103068 -4.37646e-05 -0.248943" quat="0.5 0.5 -0.5 -0.5">
+        <!-- <geom class="balance"/> -->
+      <joint name="joint_4" pos="0 0 0" axis="1 0.000203128 -6.60017e-05" damping="2.0" armature="1.05" range="0 0.5236" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-13" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-28" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-5" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-16" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-15" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-4" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-11" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-25" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-17" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-26" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-18" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-3" />
+      <geom pos="-4.37646e-05 0.248943 0.103068" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-14" />
+      <body name="link_0" pos="-5.5305e-05 0.304071 -0.177412">
+        <joint name="joint_0" pos="0 0 0" axis="-1 -0.000209336 0" damping="2.0" armature="1.05" range="-0.2618 0.2618" />
+        <geom pos="1.15403e-05 -0.055128 0.28048" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-6" />
+        <body name="link_1" pos="-0.00302622 0.114334 0.182704">
+          <joint name="joint_1" pos="0 0 0" axis="-0.016422 -0.499913 -0.86592" damping="2.0" armature="1.05" range="-0.392699 0.392699" />
+          <geom pos="0.00303776 -0.169461 0.097776" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-7" />
+          <body name="link_3" pos="0.00299327 0.094741 0.160821">
+            <joint name="joint_3" pos="0 0 0" axis="-1 -0.000176752 3.50765e-05" damping="2.0" armature="1.05" range="-0.2618 0.2618" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-23" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-21" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-32" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-31" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-20" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-33" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-29" />
+            <geom pos="4.44868e-05 -0.264202 -0.0630445" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1"  mesh="original-30" />
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

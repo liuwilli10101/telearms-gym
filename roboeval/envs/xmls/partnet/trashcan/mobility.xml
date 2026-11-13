@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<mujoco model="partnet_f7c95d62feb4fb03c0d62fb4fabc5d06">
+  <compiler angle="radian" meshdir="textured_objs/"/>
+
+  <default>
+    <default class="visual">
+      <geom contype="0" conaffinity="0" group="2" type="mesh" density="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+
+  <asset>
+    <mesh name="original-5" file="original-5/original-5.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-5_collision_0" file="original-5/original-5_collision_0.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-5_collision_1" file="original-5/original-5_collision_1.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-5_collision_2" file="original-5/original-5_collision_2.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-5_collision_3" file="original-5/original-5_collision_3.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-5_collision_4" file="original-5/original-5_collision_4.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-5_collision_5" file="original-5/original-5_collision_5.obj" scale="0.65 0.65 0.65"/>
+
+    <mesh name="new-2" file="new-2/new-2.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_0" file="new-2/new-2_collision_0.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_1" file="new-2/new-2_collision_1.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_2" file="new-2/new-2_collision_2.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_3" file="new-2/new-2_collision_3.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_4" file="new-2/new-2_collision_4.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_5" file="new-2/new-2_collision_5.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_6" file="new-2/new-2_collision_6.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_7" file="new-2/new-2_collision_7.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_8" file="new-2/new-2_collision_8.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_9" file="new-2/new-2_collision_9.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_10" file="new-2/new-2_collision_10.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_11" file="new-2/new-2_collision_11.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_12" file="new-2/new-2_collision_12.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_13" file="new-2/new-2_collision_13.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_14" file="new-2/new-2_collision_14.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_15" file="new-2/new-2_collision_15.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_16" file="new-2/new-2_collision_16.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_17" file="new-2/new-2_collision_17.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_18" file="new-2/new-2_collision_18.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-2_collision_19" file="new-2/new-2_collision_19.obj" scale="0.65 0.65 0.65"/>
+
+    <mesh name="new-0" file="new-0.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="new-1" file="new-1.obj" scale="0.65 0.65 0.65"/>
+
+    <mesh name="original-3" file="original-3/original-3.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_0" file="original-3/original-3_collision_0.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_1" file="original-3/original-3_collision_1.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_2" file="original-3/original-3_collision_2.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_3" file="original-3/original-3_collision_3.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_4" file="original-3/original-3_collision_4.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_5" file="original-3/original-3_collision_5.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_6" file="original-3/original-3_collision_6.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_7" file="original-3/original-3_collision_7.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_8" file="original-3/original-3_collision_8.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_9" file="original-3/original-3_collision_9.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_10" file="original-3/original-3_collision_10.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_11" file="original-3/original-3_collision_11.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_12" file="original-3/original-3_collision_12.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_13" file="original-3/original-3_collision_13.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_14" file="original-3/original-3_collision_14.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_15" file="original-3/original-3_collision_15.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_16" file="original-3/original-3_collision_16.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_17" file="original-3/original-3_collision_17.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_18" file="original-3/original-3_collision_18.obj" scale="0.65 0.65 0.65"/>
+    <mesh name="original-3_collision_19" file="original-3/original-3_collision_19.obj" scale="0.65 0.65 0.65"/>
+
+    <mesh name="original-6" file="original-6.obj" scale="0.65 0.65 0.65"/>
+  </asset>
+
+  <worldbody>
+    <body name="base">
+      <!-- <freejoint/> -->
+      <!-- NEW-2 (outer shell of trashcan) -->
+      <geom mesh="new-2" quat="0.5 0.5 -0.5 -0.5" class="visual"/>
+      <geom mesh="new-2_collision_0" quat="0.5 0.5 -0.5 -0.5" rgba="0.1502397893101819 0.1666838491251399 0.02578395902204189 1" class="collision"/>
+      <geom mesh="new-2_collision_1" quat="0.5 0.5 -0.5 -0.5" rgba="0.3789834081922835 0.30683112136739543 0.44981667471120446 1" class="collision"/>
+      <geom mesh="new-2_collision_2" quat="0.5 0.5 -0.5 -0.5" rgba="0.2551808332342127 0.3630280165820372 0.25784320207303113 1" class="collision"/>
+      <geom mesh="new-2_collision_3" quat="0.5 0.5 -0.5 -0.5" rgba="0.362831198484291 0.4825802737514642 0.9775881740971859 1" class="collision"/>
+      <geom mesh="new-2_collision_4" quat="0.5 0.5 -0.5 -0.5" rgba="0.07610169923963472 0.66883377330854 0.16412693632648212 1" class="collision"/>
+      <geom mesh="new-2_collision_5" quat="0.5 0.5 -0.5 -0.5" rgba="0.8866911660544654 0.48147801339480534 0.8597684412141462 1" class="collision"/>
+      <geom mesh="new-2_collision_6" quat="0.5 0.5 -0.5 -0.5" rgba="0.4061791434011981 0.21315931468509786 0.4077422930377729 1" class="collision"/>
+      <geom mesh="new-2_collision_7" quat="0.5 0.5 -0.5 -0.5" rgba="0.03174475607134364 0.7233482577398757 0.18740579971363913 1" class="collision"/>
+      <geom mesh="new-2_collision_8" quat="0.5 0.5 -0.5 -0.5" rgba="0.9151123196980007 0.10169435362437729 0.6268677827398483 1" class="collision"/>
+      <geom mesh="new-2_collision_9" quat="0.5 0.5 -0.5 -0.5" rgba="0.749756613095494 0.6683421265693361 0.021717543316488896 1" class="collision"/>
+      <geom mesh="new-2_collision_10" quat="0.5 0.5 -0.5 -0.5" rgba="0.8132126588694543 0.8163430808889197 0.5394905246929518 1" class="collision"/>
+      <geom mesh="new-2_collision_11" quat="0.5 0.5 -0.5 -0.5" rgba="0.3266116931338333 0.380030996981222 0.040879931110621825 1" class="collision"/>
+      <geom mesh="new-2_collision_12" quat="0.5 0.5 -0.5 -0.5" rgba="0.47485854832087804 0.23713384912862812 0.10492425505654235 1" class="collision"/>
+      <geom mesh="new-2_collision_13" quat="0.5 0.5 -0.5 -0.5" rgba="0.3519752777647359 0.08537377719419859 0.4730968542942974 1" class="collision"/>
+      <geom mesh="new-2_collision_14" quat="0.5 0.5 -0.5 -0.5" rgba="0.30618731455126946 0.5271897407921984 0.0912378988504996 1" class="collision"/>
+      <geom mesh="new-2_collision_15" quat="0.5 0.5 -0.5 -0.5" rgba="0.9307568624525703 0.1740018697572473 0.3248477872686696 1" class="collision"/>
+      <geom mesh="new-2_collision_16" quat="0.5 0.5 -0.5 -0.5" rgba="0.6315030273476647 0.9548693816624925 0.6223688673629861 1" class="collision"/>
+      <geom mesh="new-2_collision_17" quat="0.5 0.5 -0.5 -0.5" rgba="0.7513193132368469 0.9748171744428187 0.2805627806461112 1" class="collision"/>
+      <geom mesh="new-2_collision_18" quat="0.5 0.5 -0.5 -0.5" rgba="0.22378240800058713 0.9407934831546982 0.8534655487426033 1" class="collision"/>
+      <geom mesh="new-2_collision_19" quat="0.5 0.5 -0.5 -0.5" rgba="0.24152517206233004 0.5434281864469834 0.6207109055983931 1" class="collision"/>
+
+      <geom mesh="original-3" quat="0.5 0.5 -0.5 -0.5" class="visual"/>
+      <geom mesh="original-3_collision_0" quat="0.5 0.5 -0.5 -0.5" rgba="0.553006024485605 0.7781868625794796 0.8829502695842283 1" class="collision"/>
+      <geom mesh="original-3_collision_1" quat="0.5 0.5 -0.5 -0.5" rgba="0.7838397854588142 0.5308826181897831 0.16598300207546635 1" class="collision"/>
+      <geom mesh="original-3_collision_2" quat="0.5 0.5 -0.5 -0.5" rgba="0.2233925245199464 0.17885642696154758 0.2813071197514365 1" class="collision"/>
+      <geom mesh="original-3_collision_3" quat="0.5 0.5 -0.5 -0.5" rgba="0.6103352951001688 0.4738556054004859 0.5014328409729922 1" class="collision"/>
+      <geom mesh="original-3_collision_4" quat="0.5 0.5 -0.5 -0.5" rgba="0.33046269362818215 0.9194741058904957 0.641044821946656 1" class="collision"/>
+      <geom mesh="original-3_collision_5" quat="0.5 0.5 -0.5 -0.5" rgba="0.181430100722352 0.03395868939212576 0.8067162092754756 1" class="collision"/>
+      <geom mesh="original-3_collision_6" quat="0.5 0.5 -0.5 -0.5" rgba="0.5228838159265669 0.5227701318375123 0.7880654756283488 1" class="collision"/>
+      <geom mesh="original-3_collision_7" quat="0.5 0.5 -0.5 -0.5" rgba="0.8605469842334805 0.7898966257423825 0.2842812619711428 1" class="collision"/>
+      <geom mesh="original-3_collision_8" quat="0.5 0.5 -0.5 -0.5" rgba="0.6375202693558465 0.7663534260108293 0.5192683464045049 1" class="collision"/>
+      <geom mesh="original-3_collision_9" quat="0.5 0.5 -0.5 -0.5" rgba="0.559590243170648 0.3984700047723746 0.23270278075491158 1" class="collision"/>
+      <geom mesh="original-3_collision_10" quat="0.5 0.5 -0.5 -0.5" rgba="0.49631535494116497 0.7407373270335621 0.8233529587451449 1" class="collision"/>
+      <geom mesh="original-3_collision_11" quat="0.5 0.5 -0.5 -0.5" rgba="0.5711971403978714 0.773320722699555 0.5131964650010732 1" class="collision"/>
+      <geom mesh="original-3_collision_12" quat="0.5 0.5 -0.5 -0.5" rgba="0.4340937280717425 0.307864726348803 0.6796378312262533 1" class="collision"/>
+      <geom mesh="original-3_collision_13" quat="0.5 0.5 -0.5 -0.5" rgba="0.09939263720800273 0.7222753403081098 0.7456778838746859 1" class="collision"/>
+      <geom mesh="original-3_collision_14" quat="0.5 0.5 -0.5 -0.5" rgba="0.5164304937809028 0.21040539687154125 0.3690202564949435 1" class="collision"/>
+      <geom mesh="original-3_collision_15" quat="0.5 0.5 -0.5 -0.5" rgba="0.40471158490801795 0.8516764768431532 0.5223537741698155 1" class="collision"/>
+      <geom mesh="original-3_collision_16" quat="0.5 0.5 -0.5 -0.5" rgba="0.6621629691370529 0.5668822976744485 0.6583191550548351 1" class="collision"/>
+      <geom mesh="original-3_collision_17" quat="0.5 0.5 -0.5 -0.5" rgba="0.724554797438887 0.4565015653605139 0.5253467714231395 1" class="collision"/>
+      <geom mesh="original-3_collision_18" quat="0.5 0.5 -0.5 -0.5" rgba="0.9565660870135324 0.029864482839548012 0.6035466224141917 1" class="collision"/>
+      <geom mesh="original-3_collision_19" quat="0.5 0.5 -0.5 -0.5" rgba="0.6521366624178254 0.18024913446905177 0.047615377509572565 1" class="collision"/>
+
+      <geom name="cover_support-6" pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" mesh="original-6"/>
+      <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-6"/>
+
+      <body name="link_0" pos="-0.06283134 0 0.47677695" quat="0.5 0.5 -0.5 -0.5">
+        <joint name="joint_0" pos="0 0 0" axis="1 0 0" range="-1.93732 3.68264" damping="1.0" armature="1.0" stiffness="50" springref="0"/>
+        <geom mesh="original-5" pos="0 -0.47677695 -0.06283134" quat="1 0 0 0" class="visual"/>
+        <geom mesh="original-5_collision_0" pos="0 -0.47677695 -0.06283134" quat="1 0 0 0" rgba="0.9322963242571708 0.38567805201913674 0.9516401680213834 1" class="collision"/>
+        <geom mesh="original-5_collision_1" pos="0 -0.47677695 -0.06283134" quat="1 0 0 0" rgba="0.7932413430609873 0.515382900011749 0.1686838054596157 1" class="collision"/>
+        <geom mesh="original-5_collision_2" pos="0 -0.47677695 -0.06283134" quat="1 0 0 0" rgba="0.6219019207509594 0.792977316681187 0.23711813185506814 1" class="collision"/>
+        <geom mesh="original-5_collision_3" pos="0 -0.47677695 -0.06283134" quat="1 0 0 0" rgba="0.4410519791991171 0.9630441071720909 0.5689281440626511 1" class="collision"/>
+        <geom mesh="original-5_collision_4" pos="0 -0.47677695 -0.06283134" quat="1 0 0 0" rgba="0.763628079363291 0.7620582575322363 0.36283300998949053 1" class="collision"/>
+        <geom mesh="original-5_collision_5" pos="0 -0.47677695 -0.06283134" quat="1 0 0 0" rgba="0.7851089507097389 0.7711297464637629 0.8684634767789836 1" class="collision"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="base" body2="link_0"/>
+  </contact>
+</mujoco>

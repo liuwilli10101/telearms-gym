@@ -1,0 +1,12 @@
+# move objects around the living room
+props:
+  - type: SmallTable
+    position: [0.85, 0, 0.15]
+    euler: [0, 0, -90]
+  # - type: NightStand
+  #   position: [1, 0.35, 0.5]
+  #   euler: [0, 0, -90]
+
+
+
+  

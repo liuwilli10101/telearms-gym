@@ -1,0 +1,5 @@
+# Rotate object tasks
+props:
+  - type: Table
+    position: [0.7, 0, 0]
+    euler: [0, 0, -90]

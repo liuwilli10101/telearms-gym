@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="apple">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+  <default>
+    <default class="apple">
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0" mass="0.15"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="mesh" mass="0" solimp="0.95 0.99 0.001" solref="0.004 1"/>
+      </default>
+    </default>
+  </default>
+  <asset>
+    <material name="Apple1_Mat3" specular="0.5" shininess="0.5" rgba="1 1 1 1.0"/>
+    <mesh file="Apple_11.obj"/>
+    <mesh file="Apple_11_collision_0.obj"/>
+    <mesh file="Apple_11_collision_1.obj"/>
+    <mesh file="Apple_11_collision_2.obj"/>
+    <mesh file="Apple_11_collision_3.obj"/>
+    <mesh file="Apple_11_collision_4.obj"/>
+    <mesh file="Apple_11_collision_5.obj"/>
+    <mesh file="Apple_11_collision_6.obj"/>
+  </asset>
+  <worldbody>
+    <body name="apple" childclass="apple">
+      <geom material="Apple1_Mat3" mesh="Apple_11" class="visual"/>
+      <geom mesh="Apple_11_collision_0" class="collision"/>
+      <geom mesh="Apple_11_collision_1" class="collision"/>
+      <geom mesh="Apple_11_collision_2" class="collision"/>
+      <geom mesh="Apple_11_collision_3" class="collision"/>
+      <geom mesh="Apple_11_collision_4" class="collision"/>
+      <geom mesh="Apple_11_collision_5" class="collision"/>
+      <geom mesh="Apple_11_collision_6" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

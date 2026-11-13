@@ -1,0 +1,18 @@
+# Base cabinets with door
+props:
+  - type: BaseCabinet
+    position: [1.2, 0.3, 0]
+    euler: [0, 0, -90]
+  - type: BaseCabinet
+    position: [1.2, -0.3, 0]
+    euler: [0, 0, -90]
+spawns:
+  - name: workspace
+    size: [0.55, 0.285, 0.01]
+    position: [0.895, 0, 0.9]
+    euler: [0, 0, -90]
+robot:
+  - name: Bimanual Panda
+    position: [0.3, 0.0, 0.1]
+  - name: h1
+    position: [0, 0, 0]

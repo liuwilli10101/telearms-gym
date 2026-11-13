@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<mujoco model="colored_cube">
+  <compiler angle="radian"
+            texturedir="/home/carter/RoboEval/roboeval/envs/xmls/assets/textures"
+            meshdir=""/>
+
+  <!-- Thin cardboard default for every face -->
+  <default class="side">
+    <geom type="box"
+          size="0.02 0.02 0.001"
+          condim="3"
+          friction="1 0.1 0.01"
+          density="1500"
+          solimp="0.95 0.99 0.001"
+          solref="0.005 1"
+          />
+  </default>
+
+  <!-- six textures + six materials -->
+  <asset>
+    <texture name="T0" file="red.png"/>
+    <texture name="T1" file="green.png"/>
+    <texture name="T2" file="blue.png"/>
+    <texture name="T3" file="yellow.png"/>
+    <texture name="T4" file="purple.png"/>
+    <texture name="T5" file="orange.png"/>
+    <material name="M0" reflectance="0.3" shininess="0.6" texture="T0"/>
+    <material name="M1" reflectance="0.3" shininess="0.6" texture="T1"/>
+    <material name="M2" reflectance="0.3" shininess="0.6" texture="T2"/>
+    <material name="M3" reflectance="0.3" shininess="0.6" texture="T3"/>
+    <material name="M4" reflectance="0.3" shininess="0.6" texture="T4"/>
+    <material name="M5" reflectance="0.3" shininess="0.6" texture="T5"/>
+  </asset>
+
+  <!-- six independent geoms, one per face -->
+  <worldbody>
+    <body name="cube_root">
+      <geom name="+x_red" class="side" material="M0" pos="0.0200 0.0000 0.0000" euler="90.0 90.0 0.0"/>
+      <geom name="-x_green" class="side" material="M1" pos="-0.0200 0.0000 0.0000" euler="90.0 -90.0 0.0"/>
+      <geom name="+y_blue" class="side" material="M2" pos="0.0000 0.0200 0.0000" euler="90.0 0.0 0.0"/>
+      <geom name="-y_yellow" class="side" material="M3" pos="0.0000 -0.0200 0.0000" euler="90.0 0.0 0.0"/>
+      <geom name="+z_purple" class="side" material="M4" pos="0.0000 0.0000 0.0200" euler="0.0 0.0 0.0"/>
+      <geom name="-z_orange" class="side" material="M5" pos="0.0000 0.0000 -0.0200" euler="180.0 0.0 0.0"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,639 @@
+{
+ "_about": "The v5 dataset's 69 human tasks and their RoboEval env classes; 31 colour/letter variants (variants.py), each its base task's scene recoloured or relettered, the combination with the most v5 synthetic demos (v5_demos); and the env settings every BimanualYAM demo records (its safetensors environment_data, without env_name and reset_positions). telearms_env.py builds each task's env from these, no demo needed. unrewarded_stages: stages the dense reward never pays, those fewer than half of a task's successful human demos pass through when their recorded states are replayed, success checked before the stage flags are read as TeleArmsEnv.step does (10-12 demos per task, 2026-11-12; Ascending Number Pyramid, Cube Bridge Stacking and Three Step Cube Staircase from the Hyak stage-1 export): optional moves like Red Left Of Blue's grasp of the blue cube, and stages the task's code never sets. Place Cube On Each Patch replays cannot be checked (its patches are not in the recorded state); its three stages are each cube resting on its own patch, which every success needs. privileged_dims: the length of each task's obs_mode='privileged' observation (telearms_env.privileged_obs: 14 + 13 per free object + 7 per goal patch), measured from a seed-0 reset. instructions: each task's language instruction, as its demos were labelled.",
+ "observation_mode": "lightweight",
+ "environment_data": {
+  "action_mode_name": "JointPositionActionMode",
+  "floating_base": true,
+  "observation_config": {
+   "cameras": [],
+   "proprioception": true,
+   "privileged_information": false
+  },
+  "end_effector_mode": false,
+  "action_mode_absolute": true,
+  "floating_dofs": [],
+  "robot_name": "BimanualYAM"
+ },
+ "tasks": {
+  "Adjacent Color Cube Pairing": "AdjacentColorCubePairing",
+  "Adjacent Red Cube Placement": "AdjacentRedCubePlacementTask",
+  "Align Blocks": "AlignBlocksEnv",
+  "Aligned Cube Row Placement": "AlignedCubeRowPlacement",
+  "Aligned Letter Cube Row": "AlignedLetterCubeRow",
+  "Alphabet Cube Row Arrange": "AlphabetCubeRowArrange",
+  "Alternate Green Yellow Row": "AlternatingColorCubeRow",
+  "Alternate Red Blue Row": "AlternatingRedBlueCubeRow",
+  "Arrange Alphabetical Order": "ArrangeAlphabeticalOrderEnv",
+  "Arrange Numbers": "ArrangeNumbersEnv",
+  "Arrange Shapes": "ArrangeShapeEnv",
+  "Arrange Word": "ArrangeWordEnv",
+  "Ascending Number Pyramid": "AscendingNumberPyramidTask",
+  "Block Line Arrangement": "BlockLineArrangement",
+  "Blue Base Red Pyramid": "BlueBaseRedPyramid",
+  "Blue Cube On Red Target": "BlueCubeOnRedTarget",
+  "Blue On Red Stack To Green Target": "BlueOnRedStackToGreenTarget",
+  "Centered Semantic Cube Row": "CenteredSemanticCubeRow",
+  "Colored Cube Row Arrangement": "ColoredCubeRowArrangement",
+  "Cube Bridge Stacking": "CubeBridgeStackingTask",
+  "Cube Center Placement": "CubeCenterPlacementTask",
+  "Cube Cluster Center": "CubeClusterCenterTask",
+  "Cube Forward Right Placement": "CubeForwardRightPlacement",
+  "Cube Midpoint Placement": "CubeMidpointPlacementTask",
+  "Cube Patch Placement": "CubePatchPlacementTask",
+  "Cube Row Arrangement": "CubeRowArrangement",
+  "Cube Zigzag Arrangement": "CubeZigzagArrangement",
+  "Dog Cube Row Arrangement": "DogCubeRowArrangement",
+  "Dual Cube Side Placement": "DualCubeSidePlacement",
+  "Dual Cube Stacking": "DualCubeStackingTask",
+  "Dual Patch Cube Pair Placement": "DualPatchCubePairPlacementTask",
+  "Five Plus Shape": "PlusSignCubeArrangement",
+  "Front Edge Cube Row": "FrontEdgeCubeRow",
+  "Front To Back Cube Line": "FrontToBackCubeLine",
+  "Green Cube On Yellow Target": "GreenCubeOnYellowTargetTask",
+  "Green Patch Corner Guarding": "GreenPatchCornerGuarding",
+  "Hello Semantic Cubes 1x5 Line": "HelloSemanticCubes1x5Line",
+  "Hi Cube Placement": "HiCubePlacementTask",
+  "L Cube Arrangement": "LCubeArrangement",
+  "Letter Face Alignment": "LetterFaceAlignmentTask",
+  "Microsoft Logo Cubes": "MicrosoftLogo2x2SemanticCubeGrid",
+  "Opposite Corner Cube Placement": "OppositeCornerCubePlacement",
+  "Patch Stack And Place": "PatchStackAndPlace",
+  "Place Cube On Each Patch": "ColorMatchedCubePlacement",
+  "Push Block to Target": "PushBlockToTarget",
+  "Red Behind Blue Placement": "RedBehindBluePlacement",
+  "Red Cube Center Placement": "RedCubeCenterPlacementTask",
+  "Red Cube In Front Of Blue Cube": "RedCubeInFrontOfBlueCube",
+  "Red Left Of Blue Placement": "RedLeftOfBluePlacementTask",
+  "Red On Semantic Cube Stacking": "RedOnSemanticCubeStacking",
+  "Rotate Letter Block": "RotateLetterBlockEnv",
+  "Semantic Cube Blue B Placement": "SemanticCubeBlueBPlacement",
+  "Semantic Cube Green Target Red Stack": "SemanticCubeGreenTargetRedStack",
+  "Semantic Cube On Red Patch A Up": "SemanticCubeATargetPlacement",
+  "Semantic Cube Pyramid Build": "SemanticCubePyramidBuild",
+  "Semantic Cubes 1x4 Line 1234": "SemanticCubes1x4Line1234",
+  "Sequential Push Block to Target": "SequentialPushBlockToTarget",
+  "Single Row Alphabetical Letters Top Down": "SingleRowAlphabeticalLettersTopDown",
+  "Spell Ok Cube Alignment": "SpellOkCubeAlignmentTask",
+  "Three Cube Pyramid Stacking": "ThreeCubePyramidStacking",
+  "Three Cube Wall Row": "ThreeCubeWallRow",
+  "Three Step Cube Staircase": "ThreeStepCubeStaircase",
+  "Three Step Staircase Stack Six Cubes": "ThreeStepStaircaseStackSixCubes",
+  "Top Letter Cube Stacking": "TopLetterCubeStackingTask",
+  "Two Row Colors And Letters Arrangement": "TwoRowColorsAndLettersArrangement",
+  "Vertical Insert Two Blocks": "VerticalInsertTwoBlocksEnv",
+  "Xyz Cube Row Alignment": "XyzCubeRowAlignment",
+  "Yellow Cube Pyramid Stack 321": "YellowCubePyramidStack321",
+  "Yes Cube Row Arrangement": "YesCubeRowArrangement"
+ },
+ "variants": {
+  "Adjacent Purple Cube Placement": {
+   "base": "Adjacent Red Cube Placement",
+   "colors": {
+    "red": "purple"
+   },
+   "letters": {},
+   "v5_demos": 193
+  },
+  "Aligned Cube Row Placement Variant": {
+   "base": "Aligned Cube Row Placement",
+   "colors": {
+    "blue": "green",
+    "green": "blue",
+    "red": "red"
+   },
+   "letters": {},
+   "v5_demos": 11
+  },
+  "Alphabet Cube Row Arrange Variant": {
+   "base": "Alphabet Cube Row Arrange",
+   "colors": {},
+   "letters": {
+    "A": "R",
+    "B": "P",
+    "C": "J"
+   },
+   "v5_demos": 55
+  },
+  "Alternate Purple Yellow Row": {
+   "base": "Alternate Red Blue Row",
+   "colors": {
+    "blue": "yellow",
+    "red": "purple"
+   },
+   "letters": {},
+   "v5_demos": 37
+  },
+  "Orange Base Green Pyramid": {
+   "base": "Blue Base Red Pyramid",
+   "colors": {
+    "blue": "orange",
+    "red": "green"
+   },
+   "letters": {},
+   "v5_demos": 13
+  },
+  "Blue Cube On Green Target": {
+   "base": "Blue Cube On Red Target",
+   "colors": {
+    "blue": "blue",
+    "red": "green"
+   },
+   "letters": {},
+   "v5_demos": 32
+  },
+  "Blue On Orange Stack To Green Target": {
+   "base": "Blue On Red Stack To Green Target",
+   "colors": {
+    "blue": "blue",
+    "green": "green",
+    "red": "orange"
+   },
+   "letters": {},
+   "v5_demos": 11
+  },
+  "Cube Forward Right Placement Variant": {
+   "base": "Cube Forward Right Placement",
+   "colors": {
+    "blue": "orange"
+   },
+   "letters": {},
+   "v5_demos": 239
+  },
+  "Cube Midpoint Placement Variant": {
+   "base": "Cube Midpoint Placement",
+   "colors": {
+    "blue": "yellow",
+    "green": "blue",
+    "red": "orange"
+   },
+   "letters": {},
+   "v5_demos": 11
+  },
+  "Cube Patch Placement Variant": {
+   "base": "Cube Patch Placement",
+   "colors": {
+    "blue": "green",
+    "green": "blue",
+    "red": "red",
+    "yellow": "yellow"
+   },
+   "letters": {},
+   "v5_demos": 11
+  },
+  "Dog Cube Row Arrangement Variant": {
+   "base": "Dog Cube Row Arrangement",
+   "colors": {},
+   "letters": {
+    "D": "B",
+    "G": "N",
+    "O": "I"
+   },
+   "v5_demos": 54
+  },
+  "Dual Cube Side Placement Variant": {
+   "base": "Dual Cube Side Placement",
+   "colors": {
+    "blue": "blue",
+    "green": "green",
+    "red": "purple"
+   },
+   "letters": {},
+   "v5_demos": 19
+  },
+  "Front To Back Cube Line Variant": {
+   "base": "Front To Back Cube Line",
+   "colors": {
+    "blue": "red",
+    "green": "blue",
+    "red": "yellow"
+   },
+   "letters": {},
+   "v5_demos": 94
+  },
+  "Orange Cube On Green Target": {
+   "base": "Green Cube On Yellow Target",
+   "colors": {
+    "green": "orange",
+    "yellow": "green"
+   },
+   "letters": {},
+   "v5_demos": 37
+  },
+  "Hi Cube Placement Variant": {
+   "base": "Hi Cube Placement",
+   "colors": {},
+   "letters": {
+    "H": "O",
+    "I": "H"
+   },
+   "v5_demos": 363
+  },
+  "L Cube Arrangement Variant": {
+   "base": "L Cube Arrangement",
+   "colors": {
+    "blue": "blue",
+    "green": "purple",
+    "red": "yellow",
+    "yellow": "red"
+   },
+   "letters": {},
+   "v5_demos": 13
+  },
+  "Microsoft Logo Cubes Variant": {
+   "base": "Microsoft Logo Cubes",
+   "colors": {
+    "blue": "purple",
+    "green": "yellow",
+    "red": "red",
+    "yellow": "blue"
+   },
+   "letters": {},
+   "v5_demos": 11
+  },
+  "Opposite Corner Cube Placement Variant": {
+   "base": "Opposite Corner Cube Placement",
+   "colors": {
+    "green": "green",
+    "red": "orange"
+   },
+   "letters": {},
+   "v5_demos": 20
+  },
+  "Red Behind Orange Placement": {
+   "base": "Red Behind Blue Placement",
+   "colors": {
+    "blue": "orange",
+    "red": "red"
+   },
+   "letters": {},
+   "v5_demos": 77
+  },
+  "Orange Cube Center Placement": {
+   "base": "Red Cube Center Placement",
+   "colors": {
+    "green": "yellow",
+    "red": "orange"
+   },
+   "letters": {},
+   "v5_demos": 48
+  },
+  "Blue Cube In Front Of Purple Cube": {
+   "base": "Red Cube In Front Of Blue Cube",
+   "colors": {
+    "blue": "purple",
+    "red": "blue"
+   },
+   "letters": {},
+   "v5_demos": 65
+  },
+  "Green Left Of Purple Placement": {
+   "base": "Red Left Of Blue Placement",
+   "colors": {
+    "blue": "purple",
+    "red": "green"
+   },
+   "letters": {},
+   "v5_demos": 101
+  },
+  "Yellow On Semantic Cube Stacking": {
+   "base": "Red On Semantic Cube Stacking",
+   "colors": {
+    "red": "yellow"
+   },
+   "letters": {
+    "A": "T"
+   },
+   "v5_demos": 51
+  },
+  "Rotate Letter Block Variant": {
+   "base": "Rotate Letter Block",
+   "colors": {},
+   "letters": {
+    "E": "D"
+   },
+   "v5_demos": 161
+  },
+  "Semantic Cube Blue W Placement": {
+   "base": "Semantic Cube Blue B Placement",
+   "colors": {
+    "blue": "blue"
+   },
+   "letters": {
+    "B": "W"
+   },
+   "v5_demos": 55
+  },
+  "Semantic Cube Orange Target Purple Stack": {
+   "base": "Semantic Cube Green Target Red Stack",
+   "colors": {
+    "green": "orange",
+    "red": "purple"
+   },
+   "letters": {
+    "A": "K"
+   },
+   "v5_demos": 52
+  },
+  "Semantic Cube On Purple Patch Z Up": {
+   "base": "Semantic Cube On Red Patch A Up",
+   "colors": {
+    "red": "purple"
+   },
+   "letters": {
+    "A": "Z"
+   },
+   "v5_demos": 52
+  },
+  "Semantic Cube Pyramid Build Variant": {
+   "base": "Semantic Cube Pyramid Build",
+   "colors": {},
+   "letters": {
+    "A": "L",
+    "B": "D",
+    "C": "Z"
+   },
+   "v5_demos": 54
+  },
+  "Sequential Push Block to Target Variant": {
+   "base": "Sequential Push Block to Target",
+   "colors": {
+    "blue": "orange",
+    "red": "green"
+   },
+   "letters": {},
+   "v5_demos": 98
+  },
+  "Spell Ok Cube Alignment Variant": {
+   "base": "Spell Ok Cube Alignment",
+   "colors": {},
+   "letters": {
+    "K": "F",
+    "O": "O"
+   },
+   "v5_demos": 74
+  },
+  "Three Cube Wall Row Variant": {
+   "base": "Three Cube Wall Row",
+   "colors": {
+    "blue": "blue",
+    "green": "yellow",
+    "red": "red"
+   },
+   "letters": {},
+   "v5_demos": 12
+  }
+ },
+ "unrewarded_stages": {
+  "Adjacent Red Cube Placement": [
+   1
+  ],
+  "Blue Base Red Pyramid": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "Blue Cube On Red Target": [
+   2,
+   3
+  ],
+  "Cube Center Placement": [
+   3
+  ],
+  "Cube Zigzag Arrangement": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8
+  ],
+  "L Cube Arrangement": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
+  ],
+  "Patch Stack And Place": [
+   1,
+   5
+  ],
+  "Push Block to Target": [
+   5
+  ],
+  "Red Cube Center Placement": [
+   3
+  ],
+  "Red Left Of Blue Placement": [
+   0
+  ],
+  "Red On Semantic Cube Stacking": [
+   3
+  ],
+  "Semantic Cube Blue B Placement": [
+   1
+  ],
+  "Semantic Cube Pyramid Build": [
+   0,
+   2,
+   4
+  ],
+  "Top Letter Cube Stacking": [
+   0,
+   1,
+   4,
+   7
+  ],
+  "Two Row Colors And Letters Arrangement": [
+   0,
+   1
+  ],
+  "Vertical Insert Two Blocks": [
+   2
+  ]
+ },
+ "privileged_dims": {
+  "Adjacent Color Cube Pairing": 66,
+  "Adjacent Red Cube Placement": 40,
+  "Align Blocks": 53,
+  "Aligned Cube Row Placement": 53,
+  "Aligned Letter Cube Row": 53,
+  "Alphabet Cube Row Arrange": 53,
+  "Alternate Green Yellow Row": 66,
+  "Alternate Red Blue Row": 66,
+  "Arrange Alphabetical Order": 53,
+  "Arrange Numbers": 66,
+  "Arrange Shapes": 79,
+  "Arrange Word": 53,
+  "Ascending Number Pyramid": 92,
+  "Block Line Arrangement": 79,
+  "Blue Base Red Pyramid": 53,
+  "Blue Cube On Red Target": 34,
+  "Blue On Red Stack To Green Target": 47,
+  "Centered Semantic Cube Row": 53,
+  "Colored Cube Row Arrangement": 66,
+  "Cube Bridge Stacking": 53,
+  "Cube Center Placement": 34,
+  "Cube Cluster Center": 73,
+  "Cube Forward Right Placement": 34,
+  "Cube Midpoint Placement": 60,
+  "Cube Patch Placement": 54,
+  "Cube Row Arrangement": 79,
+  "Cube Zigzag Arrangement": 53,
+  "Dog Cube Row Arrangement": 53,
+  "Dual Cube Side Placement": 47,
+  "Dual Cube Stacking": 66,
+  "Dual Patch Cube Pair Placement": 80,
+  "Five Plus Shape": 79,
+  "Front Edge Cube Row": 53,
+  "Front To Back Cube Line": 53,
+  "Green Cube On Yellow Target": 34,
+  "Green Patch Corner Guarding": 73,
+  "Hello Semantic Cubes 1x5 Line": 79,
+  "Hi Cube Placement": 47,
+  "L Cube Arrangement": 66,
+  "Letter Face Alignment": 27,
+  "Microsoft Logo Cubes": 66,
+  "Opposite Corner Cube Placement": 54,
+  "Patch Stack And Place": 47,
+  "Place Cube On Each Patch": 74,
+  "Push Block to Target": 60,
+  "Red Behind Blue Placement": 40,
+  "Red Cube Center Placement": 34,
+  "Red Cube In Front Of Blue Cube": 40,
+  "Red Left Of Blue Placement": 40,
+  "Red On Semantic Cube Stacking": 40,
+  "Rotate Letter Block": 27,
+  "Semantic Cube Blue B Placement": 34,
+  "Semantic Cube Green Target Red Stack": 47,
+  "Semantic Cube On Red Patch A Up": 34,
+  "Semantic Cube Pyramid Build": 53,
+  "Semantic Cubes 1x4 Line 1234": 66,
+  "Sequential Push Block to Target": 54,
+  "Single Row Alphabetical Letters Top Down": 66,
+  "Spell Ok Cube Alignment": 40,
+  "Three Cube Pyramid Stacking": 53,
+  "Three Cube Wall Row": 53,
+  "Three Step Cube Staircase": 92,
+  "Three Step Staircase Stack Six Cubes": 92,
+  "Top Letter Cube Stacking": 53,
+  "Two Row Colors And Letters Arrangement": 92,
+  "Vertical Insert Two Blocks": 40,
+  "Xyz Cube Row Alignment": 53,
+  "Yellow Cube Pyramid Stack 321": 92,
+  "Yes Cube Row Arrangement": 53
+ },
+ "instructions": {
+  "Adjacent Color Cube Pairing": "Make two adjacent color pairs: red-blue on the left and green-yellow on the right. Place red next to blue in the left-side larger-Y region. Place green next to yellow in the right-side smaller-Y region. Keep both pairs on the table and separated from each other. Release every cube. Both adjacent color pairs are in their regions, separated, table-supported, in bounds, and released.",
+  "Adjacent Red Cube Placement": "Place the red cube adjacent to the target cube or target location. Move the red cube beside the target. Keep the red cube on the table. Leave a small gap without overlap. Align the red cube with the target object or location. The red cube is adjacent to the target, stable on the table, aligned, and released.",
+  "Align Blocks": "Place all blocks in one straight row from left to right. Move the blocks into the same front-to-back position. Straighten the row. Every block is stable on the table, the row is straight, and nothing is held.",
+  "Aligned Cube Row Placement": "Make a left-to-right row in the order blue, green, red, with every cube facing the same way. Place blue on the left, green in the middle, and red on the right. Align the cubes into one straight row. Rotate the cubes so their faces line up in the same direction. The color order, row alignment, and cube orientations all match.",
+  "Aligned Letter Cube Row": "Arrange the letter cubes into one straight readable row. Rotate each cube so its target letter is readable. Place the cubes side by side in the requested reading order. Align the cubes along one straight row with consistent gaps. Release every cube. The letters are readable, the order is correct, the row is straight, and all cubes are released.",
+  "Alphabet Cube Row Arrange": "Make a left-to-right row that reads ABC toward the robot. Place A on the left, B in the middle, and C on the right. Turn each required letter toward the robot. Straighten the row and keep the cubes separate. ABC is upright, readable, aligned, and released.",
+  "Alternate Green Yellow Row": "Make a front-to-back row that alternates green and yellow. Starting nearest the robot, place green, yellow, green, then yellow. Keep every cube at the same left-to-right position. Leave a clear gap between neighboring cubes. The row reads green, yellow, green, yellow from nearest to farthest, and all cubes are released.",
+  "Alternate Red Blue Row": "Make a left-to-right row with alternating red and blue cubes. Starting at the right end, place red, blue, red, then blue. Align the cubes into one left-to-right row. Make the gaps consistent. The alternating color order is correct and all cubes are stable and released.",
+  "Arrange Alphabetical Order": "Make a left-to-right row with the visible letters in alphabetical order. Turn each letter face upward. Place the earliest letter on the left and continue in order toward the right. Make every letter upright and easy to read. The row is straight, the letters are correctly ordered, and all cubes are released.",
+  "Arrange Numbers": "Arrange the visible numbers from smallest on the left to largest on the right. Turn each number face upward. Sort the cubes by their visible numbers. Straighten the row and make the numbers readable. The numbers increase from left to right in one straight, upright, readable row. Releasing the cubes is not required for this task.",
+  "Arrange Shapes": "Arrange the blocks into the shape named by the task. For a line, make it run either left to right or front to back, not diagonally. For a circle, distribute the blocks evenly around an open center. For a pyramid footprint, make centered rows that become shorter toward the tip. The requested shape is clear when viewed from above. Releasing the blocks is not required for this task.",
+  "Arrange Word": "Use the top faces to spell the requested word from left to right. Find the needed letter faces. Turn those faces upward. Place the letters in reading order and straighten the row. The word is complete, upright, readable, and released.",
+  "Ascending Number Pyramid": "Build the required numbered structure with every number facing the robot. Make the bottom row read 4, 5, 6 from left to right. Place 2 on 4 and place 3 on 5. Place 1 on 2. Turn every numbered face toward the robot and make it upright. The complete number structure is stable, readable, and released.",
+  "Block Line Arrangement": "Place all colored cubes in one straight left-to-right row. Move each cube onto the same front-to-back line. Keep the cubes separate and use similar gaps. Straighten the completed row. All cubes are on the table in one even row and nothing is held.",
+  "Blue Base Red Pyramid": "Build a small pyramid with two blue cubes as the base and the red cube on top. Place the blue cubes side by side on the table. Align them to form a stable base. Center the red cube across the seam between the blue cubes. The red cube is stable on both blue cubes and the structure is released.",
+  "Blue Cube On Red Target": "Place the blue cube centered on the red target patch. Pick up the blue cube and move it above the red patch. Center its footprint over the patch. Lower it to the table-rest height on the patch. Release the cube. The blue cube is centered on the red patch at rest height and released.",
+  "Blue On Red Stack To Green Target": "Stack blue on red, with the completed stack standing on the green target patch. Place the red cube securely on the green patch. Lift and center the blue cube over red. Lower blue onto red without moving the base off the patch. The blue-on-red stack is stable on the green patch and released.",
+  "Centered Semantic Cube Row": "Make a three-cube row with the semantic cube centered between two colored cubes. Place one colored cube to the left of the semantic cube and one to the right. Align all three X positions. Orient the semantic cube so its target label is readable. Release all cubes. The semantic cube is centered between the side cubes, the row is X-aligned, the label is readable, and all cubes are released.",
+  "Colored Cube Row Arrangement": "Make a straight row in the sequence red, blue, green, yellow. The sequence may run in either direction. Place the four colors next to one another in the required sequence. Straighten the row. Make the gaps consistent. The sequence is correct in either direction and all cubes are stable and released.",
+  "Cube Bridge Stacking": "Build a bridge with two cubes as the base and one cube spanning across them on top. Place the two base cubes side by side on the table with a small gap. Lift the bridge cube above the base pair. Center it over the midpoint so it rests on both base cubes. Leave the bridge upright and release all cubes. The bridge cube is stably supported by both base cubes, centered and upright, with all cubes released.",
+  "Cube Center Placement": "Move the colored cube to the center of the workspace. Lift the cube and move it over the workspace center. Lower it until it rests on the table in the center region. Release it cleanly. The cube is centered, table-supported, and not held.",
+  "Cube Cluster Center": "Move all colored cubes near the center of the workspace. Move the cubes toward the center one at a time. Keep every cube on the table without stacking. Make sure every cube is near the center; they do not need to touch. All cubes are resting near the center and nothing is held.",
+  "Cube Forward Right Placement": "Place the blue cube on the white forward-right target. The target center is X=0.50, Y=-0.10. Its visible square shows the \u00b13 cm XY tolerance. Rest the cube on the table and release it.",
+  "Cube Midpoint Placement": "Place green on the green midpoint target between the red and blue reference cubes. The marker follows the reference cubes if they move. Green\u2019s center must be within the marked \u00b13 cm square and between the references. Keep the references at least 8 cm apart, rest all cubes on the table, and release them.",
+  "Cube Patch Placement": "Place the red cube on the green patch and the blue cube on the yellow patch. Center red on the green patch and release it. Center blue on the yellow patch and release it. Correct either cube if it is near the edge of its patch. Both cubes are centered on their assigned patches and nothing is held.",
+  "Cube Row Arrangement": "Arrange all colored cubes in one evenly spaced left-to-right row. Color order does not matter. Move every cube into the same row area. Keep each cube clearly separated from its neighbors. Straighten the row and make the gaps consistent. All cubes form one straight, evenly spaced row. Releasing the cubes is not required for this task.",
+  "Cube Zigzag Arrangement": "Arrange red, green, and blue into a left-to-right zigzag: front, back, front. Place red as the left/front point. Place green to the right and behind red. Place blue to the right of green and back toward the front. Release every cube. The red-green-blue relative X/Y offsets match the zigzag tolerances and all cubes are released.",
+  "Dog Cube Row Arrangement": "Make a left-to-right row that spells DOG toward the robot. Place D on the left, O in the middle, and G on the right. Turn each required letter toward the robot. Align the cubes and keep them separate. DOG is upright, readable, aligned, and released.",
+  "Dual Cube Side Placement": "Place red beside the left edge of the green patch and blue beside the right edge. Left is larger Y. Cube centers should be about 12 cm from the patch center along Y, within 3 cm, and within 5 cm in X. A small gap is allowed. Release both cubes on the table.",
+  "Dual Cube Stacking": "Build two separate stacks of two cubes. Keep the stack bases roughly 10 cm apart (6.5\u201313.5 cm accepted). Upper cubes must contact their bases; up to 3 cm lateral offset is allowed. Release all cubes.",
+  "Dual Patch Cube Pair Placement": "Put four cubes onto two patches with exactly two cubes on each patch. Place each cube onto either target patch. Keep each cube flat at table height, not stacked or between patches. Balance the distribution so each patch has two cubes. Release all cubes. All four cubes are on patches, each patch has exactly two cubes, and nothing is held.",
+  "Five Plus Shape": "Make a plus sign with red in the center and the other cubes forming the arms. Place red at the center. Place one remaining cube directly in front, behind, left, and right of red. Keep all arm cubes equally spaced from red. The plus sign is centered, aligned, flat on the table, and released.",
+  "Front Edge Cube Row": "Make a left-to-right row near the front edge of the workspace. Move each cube close to the edge nearest the robot. Align the cubes at the same distance from the edge. Keep the cubes separate. The row is straight along the front edge and all cubes are released.",
+  "Front To Back Cube Line": "Make a front-to-back line ordered red, green, blue from nearest to farthest. Place red nearest the robot. Place green behind red. Place blue farthest from the robot. Align the cubes and leave clear gaps. The front-to-back color order is correct and nothing is held.",
+  "Green Cube On Yellow Target": "Place the green cube on the yellow target patch. Pick up the green cube and move it over the yellow patch. Center it on the patch and lower it to table height. Release the cube. The green cube is on the yellow patch at rest height, color-verified, and released.",
+  "Green Patch Corner Guarding": "Place one cube near each visible corner of the green patch, in any color order. Each cube center may be within 5 cm in X and Y of its corner. Occupy all four distinct corners and release the cubes.",
+  "Hello Semantic Cubes 1x5 Line": "Make a left-to-right row that spells HELLO toward the robot. Place the letters in normal reading order. Turn each required letter toward the robot. Straighten the row and use consistent spacing. HELLO is upright, readable, aligned, and released.",
+  "Hi Cube Placement": "Place the H and I letter cubes so they spell HI in reading order. Find the H and I faces. Rotate the cubes so H and I are readable. Place H on the left and I on the right. Align the cubes into a neat row and release them. The cubes spell HI, the letters are readable, the row is aligned, and both cubes are released.",
+  "L Cube Arrangement": "Make an L shape with red, blue, and green in a left-to-right line, then yellow behind green. Place red at the left end, blue in the middle, and green at the corner. Place yellow directly behind green to form the short leg. Keep the cubes separate and on the table. The color positions form a clear L shape and nothing is held.",
+  "Letter Face Alignment": "Rotate the letter cube so the requested letter face is upright and readable. Find the requested letter face. Turn the cube until that letter is flat on top or facing the requested viewing direction. Straighten the cube so the letter is easy to read. Set the cube securely on the table. The requested letter face is aligned correctly, the cube is stable on the table, and it is released.",
+  "Microsoft Logo Cubes": "Arrange the cubes as the four-color Microsoft logo. Make a compact square with two cubes in front and two behind. From the main camera, place red at the back-left and green at the back-right. Place blue at the front-left and yellow at the front-right. Square up the rows and columns. The color layout matches the logo and all cubes are flat, stable, and released.",
+  "Opposite Corner Cube Placement": "Place the red cube 1 on the red front-left target patch and the green cube 2 on the green back-right target patch. In this workspace, front means smaller X, back means larger X, left means larger Y, and right means smaller Y. Move red cube 1 toward the red patch at the front-left corner of the workspace. Set red cube 1 down on the table with its center inside the red patch. Move green cube 2 toward the green patch at the back-right corner of the workspace. Set green cube 2 down on the table with its center inside the green patch. Release both cubes. Red cube 1 is stably inside the red front-left patch, green cube 2 is stably inside the green back-right patch, and nothing is held.",
+  "Patch Stack And Place": "Place red on the green patch and blue beside it. Red\u2019s center may be anywhere inside the patch with a 2 cm inset from its edges. Place blue outside the patch, within 6 cm of an edge. Keep both cubes resting on the table and release them.",
+  "Place Cube On Each Patch": "Place red on red, blue on blue, and green on green. Each cube center may be anywhere on its matching square patch with a 2 cm inset from the edges. Small contact gaps are tolerated, but the cubes must be resting near the surface and released.",
+  "Push Block to Target": "Push every block onto the target patch. Approach a block from the side opposite the target. Push smoothly toward the patch. Continue until the block overlaps the target. Every block overlaps the target patch. Releasing the blocks is not required for this task.",
+  "Red Behind Blue Placement": "Place the red cube directly behind the blue cube. Move red to the larger-X side of blue. Keep red and blue aligned in Y. Set both cubes stably on the table. Release them. Red is behind blue, Y-aligned, table-stable, and both cubes are released.",
+  "Red Cube Center Placement": "Place the red cube precisely at the center of the green patch. Move the red cube above the green patch. Align its center with the patch center. Lower it onto the patch and release. The red cube is centered on the green patch and released.",
+  "Red Cube In Front Of Blue Cube": "Place red directly in front of blue. Move red to the smaller-X side of blue. Align their Y positions. Keep both cubes resting on the table. Release both cubes. Red is in front of blue, Y-aligned, table-supported, and released.",
+  "Red Left Of Blue Placement": "Place red to the left of blue. Move red to the larger-Y side of blue. Keep both cubes on the tabletop. Release them. Red is left of blue by the required separation, both cubes are on the table, and neither is held.",
+  "Red On Semantic Cube Stacking": "Stack the red cube on top of the letter cube, with A facing the robot. Turn A toward the robot and leave the letter cube stable as the base. Lift the red cube and center it over the base. Lower and release red carefully. Red is stable on the letter cube, A is upright and readable toward the robot, and nothing is held.",
+  "Rotate Letter Block": "Turn the E face upward. Find the E face. Rotate the cube until E is flat on top. Set the cube securely on the table. The E face points straight up and the cube is released.",
+  "Semantic Cube Blue B Placement": "Place the semantic cube on the blue patch with B facing upward. Pick up or slide the semantic cube toward the blue patch. Center the cube on the blue patch. Rotate the cube so B is readable on the top face. Release the cube. The semantic cube is centered on the blue patch, B faces up, and the cube is released.",
+  "Semantic Cube Green Target Red Stack": "Place the letter cube on the green patch with A facing the robot, then stack the red cube on top. Turn A toward the robot, then center and release the letter cube on the green patch. Lift the red cube above it. Center, lower, and release the red cube. The complete stack is stable on the green patch, A is upright and readable toward the robot, and nothing is held.",
+  "Semantic Cube On Red Patch A Up": "Place the semantic cube on the red patch with A facing upward. Pick up or slide the semantic cube toward the red patch. Center the cube on the red patch. Rotate the cube so A is readable on the top face. Release the cube. The semantic cube is centered on the red patch, A faces up, and the cube is released.",
+  "Semantic Cube Pyramid Build": "Build a letter pyramid with B on the left, C on the right, and A centered on top. Place the B cube and C cube side by side as the base. Turn B and C toward the robot. Turn A toward the robot, then center it across the base cubes. A, B, and C are readable toward the robot, the pyramid is stable, and nothing is held.",
+  "Semantic Cubes 1x4 Line 1234": "Make a left-to-right row that reads 1234 toward the robot. Find the face showing 1 and place it at the left end. Continue with 2 and 3. Place 4 at the right end. Turn every cube so the required number faces the robot and is upright. The row reads 1234 clearly from left to right and all cubes are released.",
+  "Sequential Push Block to Target": "Push the red block to its red target, then push the blue block to its blue target. Complete the red block placement first. After red is on target, move the blue block to the blue target. Both blocks are on their matching targets in the required order. Releasing the blocks is not required for this task.",
+  "Single Row Alphabetical Letters Top Down": "Make a front-to-back row whose visible letters increase alphabetically from nearest to farthest. Choose a readable letter for each cube. Turn every chosen letter toward the robot. Put the earliest letter nearest the robot and continue in alphabetical order toward the back. Align the cubes into one straight row. The letters are readable, alphabetically ordered from front to back, and released.",
+  "Spell Ok Cube Alignment": "Place the letter cubes side by side so they read OK toward the robot. Place O on the left and K on the right. Align the cubes front to back. Turn both letters toward the robot and make them upright. OK is clear, aligned, stable, and released.",
+  "Three Cube Pyramid Stacking": "Build a pyramid with green and blue as the base and red centered on top. Place green and blue side by side to form a stable base. Lift red above the seam between them. Center and release red across both base cubes. Red is supported by both base cubes and the pyramid is stable and released.",
+  "Three Cube Wall Row": "Arrange red, green, and blue into a straight front-to-back wall row. Place red at the front, green behind red, and blue behind green. Keep their Y positions aligned and all cubes on the table. Maintain the required X gaps and avoid stacking. Release the cubes. Red, green, and blue form the checked X-ordered table row and are released.",
+  "Three Step Cube Staircase": "Build a staircase that rises from the front toward the back. Make a straight base row from front to back. Use red as the front base, green as the middle base, and blue as the back base. Place yellow on green. Place purple on blue, then place orange on purple. Align every level. The colored staircase rises from red toward orange and is stable and released.",
+  "Three Step Staircase Stack Six Cubes": "Build a three-level staircase using all six cubes. Make a straight base row using three cubes. Place two cubes on the base to make the middle level. Place the final cube on the middle level to make the top. The bottom, middle, and top levels contain three cubes, two cubes, and one cube, and all cubes are released.",
+  "Top Letter Cube Stacking": "Stack the letter cube on top of the base cube with the requested letter readable. Position the base cube stably on the table. Rotate the letter cube so the requested letter will be readable. Place the letter cube centered on top of the base cube. Release the stack. The letter cube is stable on top, the requested letter is readable, and neither cube is held.",
+  "Two Row Colors And Letters Arrangement": "Make two parallel rows: a colored row in front and a letter row behind it. Arrange the front row as red, green, blue from left to right. Arrange the back row as A, B, C from left to right. Turn the letters toward the robot. Align both rows and keep a clear gap between them. Both rows are straight, correctly ordered, clearly separated, and released.",
+  "Vertical Insert Two Blocks": "Lift one block, slide the other underneath it, and finish with a stable stack. Lift the upper block clear of the table. Move the base block directly underneath. Lower the lifted block onto the base. The blocks form a stable vertical stack and neither is held.",
+  "Xyz Cube Row Alignment": "Make a left-to-right row that reads XYZ toward the robot. Place X on the left, Y in the middle, and Z on the right. Turn each required letter toward the robot. Align the cubes and keep them separate. XYZ is upright, readable, aligned, and released.",
+  "Yellow Cube Pyramid Stack 321": "Build a centered yellow-cube pyramid with a wide base, a shorter middle row, and one cube on top. Make a straight base row on the table. Center the middle pair across the seams of the base row. Center the final cube across the middle pair. Keep every cube upright. The pyramid is centered, stable, upright, and released.",
+  "Yes Cube Row Arrangement": "Make a left-to-right row that spells YES toward the robot. Place Y on the left, E in the middle, and S on the right. Turn each required letter toward the robot. Align the cubes and leave clear gaps. YES is upright, readable, aligned, and released.",
+  "Adjacent Purple Cube Placement": "Place the purple cube adjacent to the target cube or target location. Move the purple cube beside the target. Keep the purple cube on the table. Leave a small gap without overlap. Align the purple cube with the target object or location. The purple cube is adjacent to the target, stable on the table, aligned, and released.",
+  "Aligned Cube Row Placement Variant": "Make a left-to-right row in the order green, blue, red, with every cube facing the same way. Place green on the left, blue in the middle, and red on the right. Align the cubes into one straight row. Rotate the cubes so their faces line up in the same direction. The color order, row alignment, and cube orientations all match.",
+  "Alphabet Cube Row Arrange Variant": "Make a left-to-right row that reads RPJ toward the robot. Place R on the left, P in the middle, and J on the right. Turn each required letter toward the robot. Straighten the row and keep the cubes separate. RPJ is upright, readable, aligned, and released.",
+  "Alternate Purple Yellow Row": "Make a left-to-right row with alternating purple and yellow cubes. Starting at the right end, place purple, yellow, purple, then yellow. Align the cubes into one left-to-right row. Make the gaps consistent. The alternating color order is correct and all cubes are stable and released.",
+  "Orange Base Green Pyramid": "Build a small pyramid with two orange cubes as the base and the green cube on top. Place the orange cubes side by side on the table. Align them to form a stable base. Center the green cube across the seam between the orange cubes. The green cube is stable on both orange cubes and the structure is released.",
+  "Blue Cube On Green Target": "Place the blue cube centered on the green target patch. Pick up the blue cube and move it above the green patch. Center its footprint over the patch. Lower it to the table-rest height on the patch. Release the cube. The blue cube is centered on the green patch at rest height and released.",
+  "Blue On Orange Stack To Green Target": "Stack blue on orange, with the completed stack standing on the green target patch. Place the orange cube securely on the green patch. Lift and center the blue cube over orange. Lower blue onto orange without moving the base off the patch. The blue-on-orange stack is stable on the green patch and released.",
+  "Cube Forward Right Placement Variant": "Place the orange cube on the white forward-right target. The target center is X=0.50, Y=-0.10. Its visible square shows the \u00b13 cm XY tolerance. Rest the cube on the table and release it.",
+  "Cube Midpoint Placement Variant": "Place blue on the blue midpoint target between the orange and yellow reference cubes. The marker follows the reference cubes if they move. Blue\u2019s center must be within the marked \u00b13 cm square and between the references. Keep the references at least 8 cm apart, rest all cubes on the table, and release them.",
+  "Cube Patch Placement Variant": "Place the red cube on the blue patch and the green cube on the yellow patch. Center red on the blue patch and release it. Center green on the yellow patch and release it. Correct either cube if it is near the edge of its patch. Both cubes are centered on their assigned patches and nothing is held.",
+  "Dog Cube Row Arrangement Variant": "Make a left-to-right row that spells BIN toward the robot. Place B on the left, I in the middle, and N on the right. Turn each required letter toward the robot. Align the cubes and keep them separate. BIN is upright, readable, aligned, and released.",
+  "Dual Cube Side Placement Variant": "Place purple beside the left edge of the green patch and blue beside the right edge. Left is larger Y. Cube centers should be about 12 cm from the patch center along Y, within 3 cm, and within 5 cm in X. A small gap is allowed. Release both cubes on the table.",
+  "Front To Back Cube Line Variant": "Make a front-to-back line ordered yellow, blue, red from nearest to farthest. Place yellow nearest the robot. Place blue behind yellow. Place red farthest from the robot. Align the cubes and leave clear gaps. The front-to-back color order is correct and nothing is held.",
+  "Orange Cube On Green Target": "Place the orange cube on the green target patch. Pick up the orange cube and move it over the green patch. Center it on the patch and lower it to table height. Release the cube. The orange cube is on the green patch at rest height, color-verified, and released.",
+  "Hi Cube Placement Variant": "Place the O and H letter cubes so they spell OH in reading order. Find the O and H faces. Rotate the cubes so O and H are readable. Place O on the left and H on the right. Align the cubes into a neat row and release them. The cubes spell OH, the letters are readable, the row is aligned, and both cubes are released.",
+  "L Cube Arrangement Variant": "Make an L shape with yellow, blue, and purple in a left-to-right line, then red behind purple. Place yellow at the left end, blue in the middle, and purple at the corner. Place red directly behind purple to form the short leg. Keep the cubes separate and on the table. The color positions form a clear L shape and nothing is held.",
+  "Microsoft Logo Cubes Variant": "Arrange the cubes as the four-color Microsoft logo. Make a compact square with two cubes in front and two behind. From the main camera, place red at the back-left and yellow at the back-right. Place purple at the front-left and blue at the front-right. Square up the rows and columns. The color layout matches the logo and all cubes are flat, stable, and released.",
+  "Opposite Corner Cube Placement Variant": "Place the orange cube 1 on the orange front-left target patch and the green cube 2 on the green back-right target patch. In this workspace, front means smaller X, back means larger X, left means larger Y, and right means smaller Y. Move orange cube 1 toward the orange patch at the front-left corner of the workspace. Set orange cube 1 down on the table with its center inside the orange patch. Move green cube 2 toward the green patch at the back-right corner of the workspace. Set green cube 2 down on the table with its center inside the green patch. Release both cubes. Orange cube 1 is stably inside the orange front-left patch, green cube 2 is stably inside the green back-right patch, and nothing is held.",
+  "Red Behind Orange Placement": "Place the red cube directly behind the orange cube. Move red to the larger-X side of orange. Keep red and orange aligned in Y. Set both cubes stably on the table. Release them. Red is behind orange, Y-aligned, table-stable, and both cubes are released.",
+  "Orange Cube Center Placement": "Place the orange cube precisely at the center of the yellow patch. Move the orange cube above the yellow patch. Align its center with the patch center. Lower it onto the patch and release. The orange cube is centered on the yellow patch and released.",
+  "Blue Cube In Front Of Purple Cube": "Place blue directly in front of purple. Move blue to the smaller-X side of purple. Align their Y positions. Keep both cubes resting on the table. Release both cubes. Blue is in front of purple, Y-aligned, table-supported, and released.",
+  "Green Left Of Purple Placement": "Place green to the left of purple. Move green to the larger-Y side of purple. Keep both cubes on the tabletop. Release them. Green is left of purple by the required separation, both cubes are on the table, and neither is held.",
+  "Yellow On Semantic Cube Stacking": "Stack the yellow cube on top of the letter cube, with T facing the robot. Turn T toward the robot and leave the letter cube stable as the base. Lift the yellow cube and center it over the base. Lower and release yellow carefully. Yellow is stable on the letter cube, T is upright and readable toward the robot, and nothing is held.",
+  "Rotate Letter Block Variant": "Turn the D face upward. Find the D face. Rotate the cube until D is flat on top. Set the cube securely on the table. The D face points straight up and the cube is released.",
+  "Semantic Cube Blue W Placement": "Place the semantic cube on the blue patch with W facing upward. Pick up or slide the semantic cube toward the blue patch. Center the cube on the blue patch. Rotate the cube so W is readable on the top face. Release the cube. The semantic cube is centered on the blue patch, W faces up, and the cube is released.",
+  "Semantic Cube Orange Target Purple Stack": "Place the letter cube on the orange patch with K facing the robot, then stack the purple cube on top. Turn K toward the robot, then center and release the letter cube on the orange patch. Lift the purple cube above it. Center, lower, and release the purple cube. The complete stack is stable on the orange patch, K is upright and readable toward the robot, and nothing is held.",
+  "Semantic Cube On Purple Patch Z Up": "Place the semantic cube on the purple patch with Z facing upward. Pick up or slide the semantic cube toward the purple patch. Center the cube on the purple patch. Rotate the cube so Z is readable on the top face. Release the cube. The semantic cube is centered on the purple patch, Z faces up, and the cube is released.",
+  "Semantic Cube Pyramid Build Variant": "Build a letter pyramid with D on the left, Z on the right, and L centered on top. Place the D cube and Z cube side by side as the base. Turn D and Z toward the robot. Turn L toward the robot, then center it across the base cubes. L, D, and Z are readable toward the robot, the pyramid is stable, and nothing is held.",
+  "Sequential Push Block to Target Variant": "Push the green block to its green target, then push the orange block to its orange target. Complete the green block placement first. After green is on target, move the orange block to the orange target. Both blocks are on their matching targets in the required order. Releasing the blocks is not required for this task.",
+  "Spell Ok Cube Alignment Variant": "Place the letter cubes side by side so they read OF toward the robot. Place O on the left and F on the right. Align the cubes front to back. Turn both letters toward the robot and make them upright. OF is clear, aligned, stable, and released.",
+  "Three Cube Wall Row Variant": "Arrange red, yellow, and blue into a straight front-to-back wall row. Place red at the front, yellow behind red, and blue behind yellow. Keep their Y positions aligned and all cubes on the table. Maintain the required X gaps and avoid stacking. Release the cubes. Red, yellow, and blue form the checked X-ordered table row and are released."
+ }
+}

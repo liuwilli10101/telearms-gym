@@ -1,0 +1,8 @@
+# move objects around the living room
+props:
+  - type: Sofa
+    position: [1.1, 0, 0.1]
+    euler: [90, 90, 90]
+  - type: SmallTable
+    position: [-0.5, -.8, 0.15]
+    euler: [0, 0, -90]

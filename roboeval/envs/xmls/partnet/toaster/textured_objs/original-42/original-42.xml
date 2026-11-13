@@ -1,0 +1,21 @@
+<mujoco model="original-42">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0_0" specular="0.06666666666666667" shininess="0.03" rgba="0.5529411764705883 0.5529411764705883 0.5529411764705883 1"/>
+    <mesh file="original-42.obj"/>
+    <mesh file="original-42_collision_0.obj"/>
+  </asset>
+  <worldbody>
+    <body name="original-42">
+      <geom material="material_0_0" mesh="original-42" class="visual"/>
+      <geom mesh="original-42_collision_0" rgba="0.7727989202890362 0.009064652738907109 0.812585448253689 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

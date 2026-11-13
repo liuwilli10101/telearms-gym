@@ -1,0 +1,11 @@
+# move objects around the living room
+props:
+  - type: Table
+    position: [0.7, 0, 0]
+    euler: [0, 0, -90]
+robot:
+  - name: Bimanual Panda
+    position: [0, 0, 0]
+
+
+  

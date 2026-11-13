@@ -1,0 +1,33 @@
+<mujoco model="original-2">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true" />
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" density="500" mass="2"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0_0" specular="0.06666666666666667" shininess="0.03" rgba="0.4666666666666667 0.5294117647058824 0.6 1"/>
+    <material name="material_1_0" specular="0.06666666666666667" shininess="0.03" rgba="0.8823529411764706 0.8823529411764706 0.7843137254901961 1"/>
+    <material name="material_2_0" specular="0.06666666666666667" shininess="0.03" rgba="0.7490196078431373 0.7490196078431373 0.7490196078431373 1"/>
+    <material name="material_3_0" specular="0.06666666666666667" shininess="0.03" rgba="1 0.8392156862745098 0 1"/>
+    <!-- <mesh file="original-2_0.obj" scale="0.1 0.1 0.1"/> -->
+    <mesh file="original-2_1.obj" scale="0.1 0.1 0.1"/>
+    <mesh file="original-2_2.obj" scale="0.1 0.1 0.1"/>
+    <mesh file="original-2_3.obj" scale="0.1 0.1 0.1"/>
+    <mesh file="original-2_collision_0.obj" scale="0.1 0.1 0.1"/>
+    <mesh file="original-2_collision_1.obj" scale="0.1 0.1 0.1"/>
+  </asset>
+  <worldbody>
+    <body name="original-2">
+      <site name="tip" type="box" size=".013 .004 .001" pos="0 0 0.039" rgba="1 1 0 1"/>
+      <geom mesh="original-2_1" material="material_2_0" class="visual" mass="3" density="500" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+      <geom mesh="original-2_2" material="material_1_0" class="visual" mass="3" density="500" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+      <geom mesh="original-2_3" material="material_0_0" class="visual" mass="3" density="500" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+      <geom mesh="original-2_collision_0" rgba="0.28663020165972386 0.15924592615612243 0.23773642037154086 1" class="collision" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+      <geom mesh="original-2_collision_1" rgba="0.633941757207908 0.6341190672132107 0.5202330946526361 1" class="collision" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    </body>
+  </worldbody>
+</mujoco>

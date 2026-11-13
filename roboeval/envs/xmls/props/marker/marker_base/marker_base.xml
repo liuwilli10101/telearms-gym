@@ -1,0 +1,26 @@
+<mujoco model="marker_base">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true" />
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" density="500" mass="2"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0_0" specular="0.06666666666666667" shininess="0.03" rgba="0.9372549019607843 0.9686274509803922 1 1"/>
+    <material name="material_1_0" specular="0.06666666666666667" shininess="0.03" rgba="1 1 1 1"/>
+    <mesh file="original-1_0.obj" scale="0.1 0.1 0.1"/>
+    <mesh file="original-1_1.obj" scale="0.1 0.1 0.1"/>
+    <mesh file="original-1_collision_0.obj" scale="0.1 0.1 0.1"/>
+  </asset>
+  <worldbody>
+    <body name="original-1">
+      <site name="tip" type="cylinder" size=".018 .0005 .0005" euler="1.5708 0 0"  pos="0 0.095 0" rgba="1 1 0 0"/>
+      <geom mesh="original-1_0" material="material_1_0" class="visual" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+      <geom mesh="original-1_1" material="material_0_0" class="visual" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+      <geom mesh="original-1_collision_0" rgba="0.4115954697458015 0.5408701512010109 0.6884166732461493 1" class="collision" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    </body>
+  </worldbody>
+</mujoco>

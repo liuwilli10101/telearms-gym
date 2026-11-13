@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="cushion">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
+  <asset>
+    <mesh file="cushion.obj" scale="0.5 0.5 0.5" />
+  </asset>
+  <default>
+    <default class="cushion">
+      <geom type="mesh" mass="2" density="500" solimp="0.98 0.99 0.001" solref="0.004 1"/>
+      <default class="balance">
+        <geom group="3" type="sphere" mass="3" size="0.01" pos="0 0 0.02" contype="0" conaffinity="0"/>
+      </default>
+    </default>
+  </default>
+  <worldbody>
+    <body name="cushion" childclass="cushion">
+      <geom name="cushion" mesh="cushion" pos="-1.6 -0.5 -0.4" rgba="0 1 0 1" euler="1.5708 -1.2 -0.5" mass="2" density="500" solimp="0.98 0.99 0.001" solref="0.004 1"/>
+      <geom class="balance"/>
+    </body>
+  </worldbody>
+</mujoco>

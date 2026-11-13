@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="small_table">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true" /><asset>
+    <mesh name="original-28" file="original-28.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-7" file="original-7.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-6" file="original-6.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-16" file="original-16.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-15" file="original-15.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-13" file="original-13.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-12" file="original-12.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-9" file="original-9.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-10" file="original-10.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-21" file="original-21.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-22" file="original-22.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-19" file="original-19.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-20" file="original-20.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-0" file="new-0.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-1" file="new-1.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-2" file="new-2.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-3" file="new-3.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-3" file="original-3.obj" scale="0.5 0.5 .7" />
+    <mesh name="original-2" file="original-2.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-4" file="new-4.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-5" file="new-5.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-9" file="new-9.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-7" file="new-7.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-8" file="new-8.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-6" file="new-6.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-11" file="new-11.obj" scale="0.5 0.5 .7" />
+    <mesh name="new-10" file="new-10.obj" scale="0.5 0.5 .7" />
+  </asset>
+  <worldbody>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-28" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-7" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-6" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-16" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-15" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-13" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-12" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom pos="0 0 0" quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-9" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-10" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-21" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-22" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-19" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-20" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="new-0" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="new-1" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="new-2" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="new-3" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-3" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <geom quat="0.5 0.5 -0.5 -0.5" type="mesh" mesh="original-2" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+    <body name="link_1" quat="0.5 0.5 -0.5 -0.5">
+      <!-- <joint name="joint_1" pos="1 0 0.1" axis="0 0 1" type="slide" range="0 0.432" /> -->
+      <!-- <geom type="mesh" mesh="new-4" />
+      <geom type="mesh" mesh="new-5" />
+      <geom type="mesh" mesh="new-9" />
+      <geom type="mesh" mesh="new-7" />
+      <geom type="mesh" mesh="new-8" />
+      <geom type="mesh" mesh="new-6" /> -->
+      <geom pos="0 0 0" type="mesh" mesh="new-11" solimp="0.95 0.99 0.001" solref="0.004 1" friction="1.0 0.005 0.0001"/>
+      <!-- <geom type="mesh" mesh="new-10" /> -->
+    </body>
+  </worldbody>
+</mujoco>

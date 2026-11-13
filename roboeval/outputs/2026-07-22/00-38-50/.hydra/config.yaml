@@ -1,0 +1,11 @@
+target_dir: ./recordings
+input_mode: Keyboard
+action_mode: joint_position
+robot: Bimanual YAM
+env: Blue On Red Stack To Green Target
+control_profile: H1 Upper Body Floating
+absolute_mode: true
+enable_all_floating_dof: false
+enable_floating_base: false
+zero_out_axis_right: []
+zero_out_axis_left: []

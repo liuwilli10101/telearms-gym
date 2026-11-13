@@ -1,0 +1,24 @@
+# pack/unpack box of static objects
+props:
+  - type: Package
+    position: [0.6, 0.3, 1.05]
+    euler: [90, 0, 180]
+    asset_path: "props/packaging_box/packaging_box.xml"
+  - type: BaseCabinet
+    position: [1, 0.3, 0]
+    euler: [0, 0, -90]
+    shelf_enable: true
+    door_right_enable: true
+  - type: BaseCabinet
+    position: [1, -0.3, 0]
+    euler: [0, 0, -90]
+    shelf_enable: false
+    door_left_enable: true
+robot:
+  - name: Bimanual Panda
+    position: [0.2, 0, 0.1]
+  - name: h1
+    position: [0, 0, 0]
+
+
+  

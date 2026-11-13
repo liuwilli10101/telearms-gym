@@ -1,0 +1,49 @@
+<mujoco model="original-40">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <material name="material_0_0" specular="0.06666666666666667" shininess="0.03" rgba="0.5529411764705883 0.5529411764705883 0.5529411764705883 1"/>
+    <mesh file="original-40.obj"/>
+    <mesh file="original-40_collision_0.obj"/>
+    <mesh file="original-40_collision_1.obj"/>
+    <mesh file="original-40_collision_2.obj"/>
+    <mesh file="original-40_collision_3.obj"/>
+    <mesh file="original-40_collision_4.obj"/>
+    <mesh file="original-40_collision_5.obj"/>
+    <mesh file="original-40_collision_6.obj"/>
+    <mesh file="original-40_collision_7.obj"/>
+    <mesh file="original-40_collision_8.obj"/>
+    <mesh file="original-40_collision_9.obj"/>
+    <mesh file="original-40_collision_10.obj"/>
+    <mesh file="original-40_collision_11.obj"/>
+    <mesh file="original-40_collision_12.obj"/>
+    <mesh file="original-40_collision_13.obj"/>
+    <mesh file="original-40_collision_14.obj"/>
+  </asset>
+  <worldbody>
+    <body name="original-40">
+      <geom material="material_0_0" mesh="original-40" class="visual"/>
+      <geom mesh="original-40_collision_0" rgba="0.6529811842028056 0.6747006434116216 0.6721702251072017 1" class="collision"/>
+      <geom mesh="original-40_collision_1" rgba="0.689753157669842 0.23389125690516366 0.26484876759271925 1" class="collision"/>
+      <geom mesh="original-40_collision_2" rgba="0.21988271516946334 0.9426025971581126 0.3537790158211408 1" class="collision"/>
+      <geom mesh="original-40_collision_3" rgba="0.8597224663000861 0.29184781656890857 0.6537325733851741 1" class="collision"/>
+      <geom mesh="original-40_collision_4" rgba="0.562854146816787 0.5273966102714583 0.574312004790005 1" class="collision"/>
+      <geom mesh="original-40_collision_5" rgba="0.9080363691408672 0.5258746964957873 0.8969381769352804 1" class="collision"/>
+      <geom mesh="original-40_collision_6" rgba="0.5359662129249237 0.5051112329569584 0.47815595995555327 1" class="collision"/>
+      <geom mesh="original-40_collision_7" rgba="0.5402360401060415 0.7774001352432672 0.8830878531914931 1" class="collision"/>
+      <geom mesh="original-40_collision_8" rgba="0.28561277300078747 0.8466815890869323 0.01212791772810351 1" class="collision"/>
+      <geom mesh="original-40_collision_9" rgba="0.09022531398584432 0.5788670140716732 0.09660906275618608 1" class="collision"/>
+      <geom mesh="original-40_collision_10" rgba="0.44893336039265486 0.5833033580785059 0.4530800727121741 1" class="collision"/>
+      <geom mesh="original-40_collision_11" rgba="0.618020946227721 0.4369340258053155 0.5776627684946385 1" class="collision"/>
+      <geom mesh="original-40_collision_12" rgba="0.45777485175328503 0.08232931870332472 0.0007872533079468225 1" class="collision"/>
+      <geom mesh="original-40_collision_13" rgba="0.4189264222967245 0.06537929224776995 0.5572232827117983 1" class="collision"/>
+      <geom mesh="original-40_collision_14" rgba="0.37621208413788554 0.938294255210925 0.710558693047779 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

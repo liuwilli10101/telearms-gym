@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="broom">
+  <compiler angle="radian" meshdir="assets" texturedir="assets" autolimits="true"/>
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh" solimp="0.95 0.99 0.001" solref="0.004 1" density="500" mass="2"/>
+    </default>
+  </default>
+  <asset>
+    <material name="beige-brown" specular="0.0" shininess="0.0" rgba="0.904661 0.558341 0.274677 1.000000"/>
+    <texture type="2d" name="broom_texture" file="broom_texture.png"/>
+    <material name="black-hair" texture="broom_texture" specular="0.0" shininess="0.0"/>
+    <mesh file="broom_0.obj" scale="0.007 0.007 0.007"/>
+    <mesh file="broom_1.obj" scale="0.007 0.007 0.007"/>
+    <mesh file="broom_collision_0.obj" scale="0.007 0.007 0.007"/>
+    <mesh file="broom_collision_1.obj" scale="0.007 0.007 0.007"/>
+  </asset>
+  <worldbody>
+    <body name="broom">
+      <geom mesh="broom_0" material="black-hair" class="visual"/>
+      <geom mesh="broom_1" material="beige-brown" class="visual"/>
+      <geom mesh="broom_collision_0" rgba="0.8481734241010206 0.9365930492105402 0.1472061841090797 1" class="collision"/>
+      <geom mesh="broom_collision_1" rgba="0.3446283229884708 0.6610442592263697 0.058205305900681625 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
